@@ -165,94 +165,29 @@
     </div>
   </div>
 </section>
-
-<<<<<<< HEAD
-    <script>
-    // Generador de partículas
-    document.addEventListener('DOMContentLoaded', function() {
-    const particlesContainer = document.getElementById('particles-container');
-
-    if (particlesContainer) {
-      const particleCount = 40;
-
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-
-        const left = Math.random() * 100;
-        const delay = Math.random() * 15;
-        const duration = 15 + Math.random() * 10;
-        const size = 2 + Math.random() * 3;
-
-        particle.style.left = `${left}%`;
-        particle.style.animationDelay = `${delay}s`;
-        particle.style.animationDuration = `${duration}s`;
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-
-        const colors = [
-          'rgba(59, 130, 246, 0.7)',
-          'rgba(139, 92, 246, 0.7)',
-          'rgba(6, 182, 212, 0.7)'
-        ];
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        particle.style.backgroundColor = randomColor;
-
-        particlesContainer.appendChild(particle);
-      }
-    }
-        
-        // Animación de las tarjetas al hacer scroll
-        const contactCards = document.querySelectorAll('.contact-card, .contact-info-card');
-        const observerOptions = {
-            threshold: 0.3,
-            rootMargin: '0px 0px -100px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && entry.target instanceof HTMLElement) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        contactCards.forEach(card => {
-            if (card instanceof HTMLElement) {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(card);
-            }
-        });
-
-        // ❌ ELIMINADO: el preventDefault del formulario
-        // Netlify necesita que el formulario se envíe de verdad
-=======
 <script>
-// Generador de partículas
-document.addEventListener('DOMContentLoaded', function() {
+// Generador de partículas y animación de tarjetas al hacer scroll
+document.addEventListener('DOMContentLoaded', function () {
   const particlesContainer = document.getElementById('particles-container');
-  
+
   if (particlesContainer) {
     const particleCount = 40;
-    
+
     for (let i = 0; i < particleCount; i++) {
       const particle = document.createElement('div');
       particle.classList.add('particle');
-      
+
       const left = Math.random() * 100;
       const delay = Math.random() * 15;
       const duration = 15 + Math.random() * 10;
       const size = 2 + Math.random() * 3;
-      
+
       particle.style.left = `${left}%`;
       particle.style.animationDelay = `${delay}s`;
       particle.style.animationDuration = `${duration}s`;
       particle.style.width = `${size}px`;
       particle.style.height = `${size}px`;
-      
+
       const colors = [
         'rgba(59, 130, 246, 0.7)',
         'rgba(139, 92, 246, 0.7)',
@@ -260,28 +195,27 @@ document.addEventListener('DOMContentLoaded', function() {
       ];
       const randomColor = colors[Math.floor(Math.random() * colors.length)];
       particle.style.backgroundColor = randomColor;
-      
+
       particlesContainer.appendChild(particle);
     }
   }
-  
+
   // Animación de las tarjetas al hacer scroll
   const contactCards = document.querySelectorAll('.contact-card, .contact-info-card');
   const observerOptions = {
     threshold: 0.3,
     rootMargin: '0px 0px -100px 0px'
   };
-  
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting && entry.target instanceof HTMLElement) {
         entry.target.style.opacity = '1';
         entry.target.style.transform = 'translateY(0)';
       }
->>>>>>> fc99e5fbda52b99357635b1bb6a4999f61da877a
     });
   }, observerOptions);
-  
+
   contactCards.forEach(card => {
     if (card instanceof HTMLElement) {
       card.style.opacity = '0';
