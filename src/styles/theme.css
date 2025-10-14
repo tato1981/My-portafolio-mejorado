@@ -1,0 +1,22 @@
+/* Overrides de tema para integrar variables de light/dark */
+body {
+  background: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+.service-card,
+.skill-card,
+.project-card,
+.contact-card,
+.contact-info-card,
+.certification-card {
+  background: var(--card-bg) !important;
+}
+
+.hero-content {
+  background: var(--card-bg) !important;
+}
+
+.mobile-menu {
+  background: var(--card-bg) !important;
+}
