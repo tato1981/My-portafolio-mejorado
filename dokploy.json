@@ -1,3 +1,7 @@
 {
-  "name": "my-portafolio"
+  "name": "my-portafolio",
+  "buildType": "static",
+  "publishDirectory": "dist",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install"
 }

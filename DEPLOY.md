@@ -18,15 +18,26 @@ Este proyecto incluye los siguientes archivos para el despliegue:
 - `nginx.conf`: Configuración del servidor web Nginx
 - `.dockerignore`: Archivos excluidos del build de Docker
 
-## Solución a Errores Comunes
+## ⚡ IMPORTANTE: Tipo de Build Correcto
 
-### Error: "No start command could be found"
+Para sitios estáticos de Astro, Dokploy tiene un build type específico llamado **"Static"** que:
+- ✅ Ejecuta automáticamente `npm install` y `npm run build`
+- ✅ Toma la carpeta `dist` (salida de Astro)
+- ✅ La sirve con NGINX optimizado automáticamente
+- ✅ No requiere Dockerfile personalizado
 
-Este error ocurre cuando Dokploy no puede determinar cómo iniciar la aplicación. La solución es usar **Docker Compose** en lugar de solo Dockerfile:
+## Solución al Error: "No start command could be found"
 
-1. **Asegúrate de que existe `docker-compose.yml`** en la raíz del proyecto
-2. **En Dokploy, selecciona el tipo de despliegue "Docker Compose"** en lugar de "Dockerfile"
-3. Dokploy usará automáticamente el archivo `docker-compose.yml`
+Este error ocurre cuando usas el tipo de build incorrecto. Para sitios estáticos de Astro:
+
+**❌ NO USAR**:
+- "Dockerfile"
+- "Docker Compose"
+- "Nixpacks"
+- "Auto-detect"
+
+**✅ USAR**:
+- **"Static"** (Build Type específico para sitios estáticos)
 
 ## Pasos para Desplegar
 
@@ -43,139 +54,168 @@ git push origin main
 ### 2. Crear Aplicación en Dokploy
 
 1. Inicia sesión en tu panel de Dokploy
-2. Haz clic en **"Create New Application"** o **"New Project"**
-3. **IMPORTANTE: Selecciona "Docker Compose" como tipo de despliegue** (NO "Dockerfile")
+2. Haz clic en **"Create New Application"** o **"+ New Project"**
+3. Ingresa el nombre de tu aplicación (ej: "my-portafolio")
 4. Conecta tu repositorio Git:
-   - Selecciona tu provider (GitHub, GitLab, etc.)
+   - Selecciona tu provider (GitHub, GitLab, Bitbucket, etc.)
    - Autoriza el acceso si es necesario
    - Selecciona el repositorio del portafolio
    - Selecciona la rama `main` (o la rama que uses)
 
-### 3. Configurar la Aplicación
+### 3. Configurar el Build Type
 
-Dokploy detectará automáticamente el archivo `docker-compose.yml` y usará su configuración.
+**🔴 PASO CRÍTICO - Este es el que soluciona el error:**
 
-#### Configuración Automática (desde docker-compose.yml)
+1. En la configuración de la aplicación, busca **"Build Type"**
+2. **Selecciona "Static"** (NO Dockerfile, NO Docker Compose, NO Nixpacks)
+3. Configura los siguientes campos:
 
-El archivo `docker-compose.yml` ya incluye:
-- Puerto: `80:80` (interno:externo)
-- Variables de entorno: `NODE_ENV=production`
-- Health check configurado en `/health`
-- Restart policy: `unless-stopped`
+   **Install Command**:
+   ```
+   npm install
+   ```
 
-#### Configuración Adicional en Dokploy (Opcional)
+   **Build Command**:
+   ```
+   npm run build
+   ```
 
-Si quieres cambiar el puerto externo:
+   **Publish Directory**:
+   ```
+   dist
+   ```
 
-1. En Dokploy, ve a la configuración de la aplicación
-2. En la sección de **Ports**, puedes cambiar el puerto externo (por ejemplo, de `80` a `3000`)
-3. El formato es: `puerto_externo:puerto_interno`
+4. **Puerto**: Asegúrate de que el puerto sea `80` (Dokploy usa NGINX automáticamente)
 
-Ejemplo: `3000:80` expondrá la aplicación en el puerto 3000
+### 4. Configurar Dominio (Opcional)
 
-#### Variables de Entorno (Ya Configuradas)
+Si quieres asignar un dominio:
 
-El proyecto ya tiene configurado:
-```
-NODE_ENV=production
-```
+1. Ve a la sección **"Domains"**
+2. Haz clic en **"Add Domain"**
+3. Ingresa tu dominio o usa el subdominio gratuito de Dokploy
+4. **Puerto**: Usa `80` (puerto interno de NGINX)
+5. Dokploy configurará automáticamente SSL con Let's Encrypt
 
-No necesitas agregar variables adicionales, pero puedes hacerlo si lo necesitas desde el panel de Dokploy.
+### 5. Variables de Entorno (Opcional)
 
-### 4. Iniciar Despliegue
+Para este proyecto no se necesitan variables de entorno adicionales, pero si quieres agregar alguna:
 
-1. **Revisa la configuración** en el panel de Dokploy
+1. Ve a **"Environment Variables"**
+2. Agrega las variables que necesites
+3. Ejemplo:
+   ```
+   NODE_ENV=production
+   ```
+
+### 6. Iniciar Despliegue
+
+1. **Revisa toda la configuración**:
+   - Build Type: **Static** ✅
+   - Install Command: `npm install` ✅
+   - Build Command: `npm run build` ✅
+   - Publish Directory: `dist` ✅
+   - Puerto: `80` ✅
+
 2. Haz clic en **"Deploy"** o **"Build & Deploy"**
+
 3. Observa los logs de build en tiempo real
-4. Espera a que se complete el build (puede tomar 3-7 minutos en el primer despliegue)
-5. Verifica que el contenedor esté corriendo (status: Running)
 
-### 5. Verificar el Build
+4. Espera a que se complete el build (2-5 minutos típicamente)
 
-Durante el build, deberías ver en los logs:
+### 7. Verificar el Build
+
+Durante el build, deberías ver en los logs algo como:
 
 ```
-Step 1: Building Node.js application...
-Step 2: Installing dependencies...
-Step 3: Running npm run build...
-Step 4: Creating Nginx image...
-Step 5: Starting container...
+Cloning repository...
+Installing dependencies (npm install)...
+Building application (npm run build)...
+✓ Built in X.XXs
+Copying dist folder to NGINX...
+Starting NGINX server on port 80...
+✅ Deployment successful!
 ```
 
 Si ves errores, revisa la sección de Troubleshooting más abajo.
 
 ## Verificar el Despliegue
 
-### Health Check
+### Verificar Estado en Dokploy
 
-Visita `https://tu-dominio/health` para verificar que el servidor esté funcionando.
+1. En el panel de Dokploy, verifica que el status sea **"Running"** (verde)
+2. Verifica que no haya errores en los logs
 
-### Página Principal
+### Visitar tu Portafolio
 
-Visita `https://tu-dominio` para ver tu portafolio en vivo.
+1. Si configuraste un dominio: `https://tu-dominio.com`
+2. O usa la URL proporcionada por Dokploy
+3. Deberías ver tu portafolio funcionando correctamente
 
-## Arquitectura del Despliegue
+### Health Check (Opcional)
 
-### Build Stage (Dockerfile)
+Si configuraste el nginx.conf, puedes visitar `https://tu-dominio/health` para verificar que NGINX esté funcionando.
 
-1. **Imagen Base**: Node.js 20 Alpine
-2. **Instalación**: Dependencias con `npm ci`
-3. **Build**: Compilación con `npm run build`
-4. **Output**: Archivos estáticos en `/app/dist`
+## Arquitectura del Despliegue con Build Type "Static"
 
-### Production Stage (Dockerfile)
+### Cómo Funciona
 
-1. **Imagen Base**: Nginx Alpine
-2. **Archivos**: Copia de `/app/dist` a `/usr/share/nginx/html`
-3. **Configuración**: Nginx optimizado para SPA
-4. **Puerto**: 80 (HTTP)
+Cuando usas el build type **"Static"** en Dokploy:
 
-## Características de la Configuración
+1. **Clonado**: Dokploy clona tu repositorio desde GitHub/GitLab
+2. **Instalación**: Ejecuta `npm install` en el servidor
+3. **Build**: Ejecuta `npm run build` (genera la carpeta `dist/`)
+4. **Despliegue**: Copia automáticamente el contenido de `dist/` a `/usr/share/nginx/html`
+5. **Servidor**: Inicia NGINX optimizado automáticamente en puerto 80
+6. **SSL**: Configura SSL automáticamente si tienes un dominio
 
-### Nginx
+### Ventajas de usar "Static" Build Type
 
-- Compresión Gzip habilitada
-- Cache de assets estáticos (1 año)
-- Security headers configurados
-- Fallback a `index.html` para rutas SPA
-- Logs de acceso y errores
+- ✅ **Sin Dockerfile necesario**: Dokploy maneja todo automáticamente
+- ✅ **NGINX optimizado**: Usa la configuración de NGINX más eficiente
+- ✅ **Build automático**: Solo defines los comandos, Dokploy los ejecuta
+- ✅ **SSL automático**: Let's Encrypt se configura automáticamente
+- ✅ **Actualizaciones fáciles**: Solo haz push y Dokploy rebuilds automáticamente
 
-### Docker
+## Optimizaciones Incluidas
 
-- Build multi-stage para imagen optimizada
-- Health check integrado
-- Permisos correctos configurados
-- Logs en stdout/stderr
+El build type "Static" de Dokploy incluye automáticamente:
+
+- ✅ **Compresión Gzip**: Reduce el tamaño de transferencia
+- ✅ **Cache de assets**: Mejora velocidad de carga
+- ✅ **Security headers**: Protección básica
+- ✅ **SPA routing**: Fallback a index.html para rutas
+- ✅ **SSL/HTTPS**: Certificados Let's Encrypt automáticos
+- ✅ **HTTP/2**: Protocolo moderno habilitado
 
 ## Troubleshooting
 
 ### ⚠️ Error: "No start command could be found"
 
-**Causa**: Dokploy está intentando detectar automáticamente el tipo de proyecto en lugar de usar Docker Compose.
+**Causa**: Estás usando el tipo de build incorrecto. Este proyecto es un sitio estático de Astro.
 
-**Solución**:
+**Solución DEFINITIVA**:
 
-1. **Elimina la aplicación actual** en Dokploy (si ya existe)
-2. **Crea una nueva aplicación** desde cero
-3. **Selecciona "Docker Compose"** como tipo de despliegue (NO "Dockerfile" ni "Auto-detect")
-4. Conecta el repositorio nuevamente
-5. Despliega
+1. **Elimina la aplicación actual** en Dokploy
+2. **Crea una nueva aplicación**
+3. **Conecta tu repositorio**
+4. **EN LA CONFIGURACIÓN**:
+   - Build Type: Selecciona **"Static"** ⭐ (NO Dockerfile, NO Docker Compose)
+   - Install Command: `npm install`
+   - Build Command: `npm run build`
+   - Publish Directory: `dist`
+   - Puerto: `80`
+5. **Haz clic en Deploy**
 
-El archivo `docker-compose.yml` en la raíz del proyecto será detectado automáticamente.
+**Por qué funciona**: El build type "Static" está diseñado específicamente para sitios estáticos como Astro, Next.js exportado, etc. Dokploy maneja automáticamente NGINX y toda la configuración.
 
 ### ⚠️ Error: "No such container: myportafolio-frontend-xxxx"
 
-**Causa**: El contenedor no se creó porque el tipo de despliegue era incorrecto o el build falló.
+**Causa**: El build type incorrecto previene que se cree el contenedor.
 
 **Solución**:
 
-1. Verifica que estés usando **"Docker Compose"** como tipo de despliegue
-2. Revisa los logs de build completos en Dokploy para ver dónde falló
-3. Asegúrate de que estos archivos existan en tu repositorio:
-   - `Dockerfile` (raíz del proyecto)
-   - `docker-compose.yml` (raíz del proyecto)
-   - `nginx.conf` (raíz del proyecto)
-   - `package.json` (raíz del proyecto)
+Sigue los pasos del error anterior. Usa **Build Type: "Static"** y el contenedor se creará automáticamente.
 
 ### Error 502 Bad Gateway
 
