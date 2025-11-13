@@ -1,7 +1,7 @@
 {
   "name": "my-portafolio",
-  "buildType": "static",
-  "publishDirectory": "dist",
-  "buildCommand": "npm run build",
-  "installCommand": "npm install"
+  "buildType": "dockerfile",
+  "dockerfile": "Dockerfile",
+  "dockerContext": ".",
+  "port": 80
 }
