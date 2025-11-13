@@ -26,18 +26,34 @@ Para sitios estáticos de Astro, Dokploy tiene un build type específico llamado
 - ✅ La sirve con NGINX optimizado automáticamente
 - ✅ No requiere Dockerfile personalizado
 
-## Solución al Error: "No start command could be found"
+## Opciones de Despliegue
 
-Este error ocurre cuando usas el tipo de build incorrecto. Para sitios estáticos de Astro:
-
-**❌ NO USAR**:
-- "Dockerfile"
-- "Docker Compose"
-- "Nixpacks"
-- "Auto-detect"
+### Opción 1: Build Type "Static" (Más Simple - Recomendado para principiantes)
 
 **✅ USAR**:
 - **"Static"** (Build Type específico para sitios estáticos)
+
+**Ventajas**:
+- Configuración más simple
+- Dokploy maneja Nginx automáticamente
+- No necesitas entender Docker
+
+### Opción 2: Build Type "Dockerfile" (Más Control - Recomendado para configuración avanzada)
+
+**✅ USAR**:
+- **"Dockerfile"** con el Dockerfile incluido en este proyecto
+
+**Ventajas**:
+- Control total sobre la configuración de Nginx
+- Healthchecks personalizados
+- Optimizaciones específicas
+- Configuración de seguridad avanzada
+
+**Última actualización (2025-11-13)**:
+- ✅ Favicon corregido (ya no da error 502)
+- ✅ Dockerfile mejorado con healthcheck
+- ✅ Nginx optimizado con headers de seguridad
+- ✅ Manejo robusto de archivos estáticos
 
 ## Pasos para Desplegar
 
