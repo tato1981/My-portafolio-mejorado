@@ -1,30 +1,31 @@
 # Build stage
-FROM node:20-alpine AS build
+FROM node:20-alpine AS builder
 WORKDIR /app
 
-# Copy package files
-COPY package.json package-lock.json* ./
+# Copy package files and install dependencies
+COPY package*.json ./
+RUN npm ci || npm install
 
-# Install dependencies
-RUN npm install --frozen-lockfile || npm install
-
-# Copy source files
+# Copy all files and build
 COPY . .
-
-# Build static site
 RUN npm run build
 
-# Production stage with nginx
-FROM nginx:alpine AS runtime
+# Production stage
+FROM nginx:alpine
+WORKDIR /usr/share/nginx/html
 
-# Copy custom nginx config
+# Remove default nginx files
+RUN rm -rf ./*
+
+# Copy built files from builder stage
+COPY --from=builder /app/dist .
+
+# Copy nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Copy built static files
-COPY --from=build /app/dist /usr/share/nginx/html
+# Create a simple health check
+RUN echo '<!DOCTYPE html><html><body>OK</body></html>' > /usr/share/nginx/html/health.html
 
-# Expose port
 EXPOSE 80
 
-# Start nginx
 CMD ["nginx", "-g", "daemon off;"]
