@@ -13,9 +13,20 @@ Este documento describe cómo desplegar el portafolio en Dokploy.
 Este proyecto incluye los siguientes archivos para el despliegue:
 
 - `Dockerfile`: Define la imagen Docker multi-stage (Node.js + Nginx)
-- `dokploy.json`: Configuración específica de Dokploy
+- `docker-compose.yml`: Configuración de Docker Compose para Dokploy
+- `dokploy.json`: Configuración mínima de Dokploy
 - `nginx.conf`: Configuración del servidor web Nginx
 - `.dockerignore`: Archivos excluidos del build de Docker
+
+## Solución a Errores Comunes
+
+### Error: "No start command could be found"
+
+Este error ocurre cuando Dokploy no puede determinar cómo iniciar la aplicación. La solución es usar **Docker Compose** en lugar de solo Dockerfile:
+
+1. **Asegúrate de que existe `docker-compose.yml`** en la raíz del proyecto
+2. **En Dokploy, selecciona el tipo de despliegue "Docker Compose"** en lugar de "Dockerfile"
+3. Dokploy usará automáticamente el archivo `docker-compose.yml`
 
 ## Pasos para Desplegar
 
@@ -25,55 +36,73 @@ Asegúrate de que todos los cambios estén commiteados y pusheados a tu reposito
 
 ```bash
 git add .
-git commit -m "Configuración lista para Dokploy"
+git commit -m "Configuración lista para Dokploy con Docker Compose"
 git push origin main
 ```
 
 ### 2. Crear Aplicación en Dokploy
 
 1. Inicia sesión en tu panel de Dokploy
-2. Crea una nueva aplicación
-3. Selecciona "Dockerfile" como tipo de despliegue
-4. Conecta tu repositorio Git
+2. Haz clic en **"Create New Application"** o **"New Project"**
+3. **IMPORTANTE: Selecciona "Docker Compose" como tipo de despliegue** (NO "Dockerfile")
+4. Conecta tu repositorio Git:
+   - Selecciona tu provider (GitHub, GitLab, etc.)
+   - Autoriza el acceso si es necesario
+   - Selecciona el repositorio del portafolio
+   - Selecciona la rama `main` (o la rama que uses)
 
 ### 3. Configurar la Aplicación
 
-#### Variables de Entorno
+Dokploy detectará automáticamente el archivo `docker-compose.yml` y usará su configuración.
 
-Configura las siguientes variables en Dokploy (ya están definidas en `dokploy.json`):
+#### Configuración Automática (desde docker-compose.yml)
 
+El archivo `docker-compose.yml` ya incluye:
+- Puerto: `80:80` (interno:externo)
+- Variables de entorno: `NODE_ENV=production`
+- Health check configurado en `/health`
+- Restart policy: `unless-stopped`
+
+#### Configuración Adicional en Dokploy (Opcional)
+
+Si quieres cambiar el puerto externo:
+
+1. En Dokploy, ve a la configuración de la aplicación
+2. En la sección de **Ports**, puedes cambiar el puerto externo (por ejemplo, de `80` a `3000`)
+3. El formato es: `puerto_externo:puerto_interno`
+
+Ejemplo: `3000:80` expondrá la aplicación en el puerto 3000
+
+#### Variables de Entorno (Ya Configuradas)
+
+El proyecto ya tiene configurado:
 ```
 NODE_ENV=production
-PORT=80
 ```
 
-#### Puertos
+No necesitas agregar variables adicionales, pero puedes hacerlo si lo necesitas desde el panel de Dokploy.
 
-- Puerto interno: `80`
-- Puerto externo: `80` (o el que prefieras)
-- Protocolo: `http`
+### 4. Iniciar Despliegue
 
-#### Health Check
+1. **Revisa la configuración** en el panel de Dokploy
+2. Haz clic en **"Deploy"** o **"Build & Deploy"**
+3. Observa los logs de build en tiempo real
+4. Espera a que se complete el build (puede tomar 3-7 minutos en el primer despliegue)
+5. Verifica que el contenedor esté corriendo (status: Running)
 
-El proyecto incluye un health check en `/health` que:
-- Intervalo: 30 segundos
-- Timeout: 3 segundos
-- Reintentos: 3
+### 5. Verificar el Build
 
-### 4. Recursos Recomendados
+Durante el build, deberías ver en los logs:
 
 ```
-Memoria: 512Mi
-CPU: 0.5 cores
+Step 1: Building Node.js application...
+Step 2: Installing dependencies...
+Step 3: Running npm run build...
+Step 4: Creating Nginx image...
+Step 5: Starting container...
 ```
 
-Estos valores están configurados en `dokploy.json` y son adecuados para un sitio estático.
-
-### 5. Iniciar Despliegue
-
-1. Haz clic en "Deploy" en Dokploy
-2. Espera a que se complete el build (puede tomar 2-5 minutos)
-3. Verifica que el contenedor esté corriendo
+Si ves errores, revisa la sección de Troubleshooting más abajo.
 
 ## Verificar el Despliegue
 
@@ -120,29 +149,63 @@ Visita `https://tu-dominio` para ver tu portafolio en vivo.
 
 ## Troubleshooting
 
+### ⚠️ Error: "No start command could be found"
+
+**Causa**: Dokploy está intentando detectar automáticamente el tipo de proyecto en lugar de usar Docker Compose.
+
+**Solución**:
+
+1. **Elimina la aplicación actual** en Dokploy (si ya existe)
+2. **Crea una nueva aplicación** desde cero
+3. **Selecciona "Docker Compose"** como tipo de despliegue (NO "Dockerfile" ni "Auto-detect")
+4. Conecta el repositorio nuevamente
+5. Despliega
+
+El archivo `docker-compose.yml` en la raíz del proyecto será detectado automáticamente.
+
+### ⚠️ Error: "No such container: myportafolio-frontend-xxxx"
+
+**Causa**: El contenedor no se creó porque el tipo de despliegue era incorrecto o el build falló.
+
+**Solución**:
+
+1. Verifica que estés usando **"Docker Compose"** como tipo de despliegue
+2. Revisa los logs de build completos en Dokploy para ver dónde falló
+3. Asegúrate de que estos archivos existan en tu repositorio:
+   - `Dockerfile` (raíz del proyecto)
+   - `docker-compose.yml` (raíz del proyecto)
+   - `nginx.conf` (raíz del proyecto)
+   - `package.json` (raíz del proyecto)
+
 ### Error 502 Bad Gateway
 
 Si encuentras un error 502:
 
-1. Verifica que el contenedor esté corriendo: `docker ps`
-2. Revisa los logs: `docker logs <container-id>`
-3. Verifica el health check: `curl http://localhost/health`
+1. Verifica que el contenedor esté corriendo en Dokploy (status: Running)
+2. Revisa los logs del contenedor en Dokploy
+3. Verifica el health check visitando: `https://tu-dominio/health`
+4. Asegúrate de que el puerto 80 esté correctamente mapeado
 
 ### Build Fallido
 
 Si el build falla:
 
-1. Revisa los logs de build en Dokploy
-2. Verifica que todas las dependencias estén en `package.json`
-3. Asegúrate de que `npm run build` funcione localmente
+1. **Revisa los logs de build completos** en Dokploy
+2. Busca errores específicos:
+   - Errores de npm install → verifica `package.json`
+   - Errores de npm run build → prueba localmente: `npm run build`
+   - Errores de Docker → verifica sintaxis del `Dockerfile`
+3. Verifica que todas las dependencias estén en `package.json`
+4. Asegúrate de que el build funcione localmente
 
 ### Contenedor no Inicia
 
 Si el contenedor no inicia:
 
-1. Verifica que Nginx esté configurado correctamente
-2. Revisa los logs del contenedor
-3. Verifica que los archivos estén en `/usr/share/nginx/html`
+1. Revisa los logs del contenedor en Dokploy
+2. Verifica que Nginx esté configurado correctamente en `nginx.conf`
+3. Verifica que los archivos compilados existan (revisa el log del build stage)
+4. Intenta ejecutar el health check: `wget http://localhost/health`
 
 ## Actualizar el Despliegue
 
