@@ -1,45 +1,30 @@
-FROM node:20-alpine AS base
-
 # Build stage
-FROM base AS build
+FROM node:20-alpine AS build
 WORKDIR /app
 
 # Copy package files
 COPY package.json package-lock.json* ./
 
-# Install dependencies with npm install (more flexible than ci)
+# Install dependencies
 RUN npm install --frozen-lockfile || npm install
 
 # Copy source files
 COPY . .
 
-# Build the application
+# Build static site
 RUN npm run build
 
-# Runtime stage
-FROM base AS runtime
-WORKDIR /app
+# Production stage with nginx
+FROM nginx:alpine AS runtime
 
-# Copy package files
-COPY package.json package-lock.json* ./
+# Copy custom nginx config
+COPY nginx.conf /etc/nginx/nginx.conf
 
-# Install only production dependencies
-RUN npm install --production --frozen-lockfile || npm install --production
-
-# Copy built application from build stage
-COPY --from=build /app/dist ./dist
+# Copy built static files
+COPY --from=build /app/dist /usr/share/nginx/html
 
 # Expose port
-EXPOSE 4321
+EXPOSE 80
 
-# Set environment to production
-ENV HOST=0.0.0.0
-ENV PORT=4321
-ENV NODE_ENV=production
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=30s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:4321', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"
-
-# Start the application
-CMD ["node", "./dist/server/entry.mjs"]
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]

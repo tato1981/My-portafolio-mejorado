@@ -4,13 +4,11 @@
   "dockerfile": "./Dockerfile",
   "buildArgs": {},
   "env": {
-    "NODE_ENV": "production",
-    "HOST": "0.0.0.0",
-    "PORT": "4321"
+    "NODE_ENV": "production"
   },
   "ports": [
     {
-      "internal": 4321,
+      "internal": 80,
       "external": 80
     }
   ]
