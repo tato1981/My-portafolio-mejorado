@@ -1,7 +1,0 @@
-{
-  "name": "my-portafolio",
-  "buildType": "dockerfile",
-  "dockerfile": "Dockerfile",
-  "dockerContext": ".",
-  "port": 80
-}
