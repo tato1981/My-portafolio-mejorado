@@ -5,10 +5,10 @@ FROM base AS build
 WORKDIR /app
 
 # Copy package files
-COPY package*.json ./
+COPY package.json package-lock.json* ./
 
-# Install dependencies
-RUN npm ci
+# Install dependencies with npm install (more flexible than ci)
+RUN npm install --frozen-lockfile || npm install
 
 # Copy source files
 COPY . .
@@ -21,10 +21,10 @@ FROM base AS runtime
 WORKDIR /app
 
 # Copy package files
-COPY package*.json ./
+COPY package.json package-lock.json* ./
 
 # Install only production dependencies
-RUN npm ci --omit=dev
+RUN npm install --production --frozen-lockfile || npm install --production
 
 # Copy built application from build stage
 COPY --from=build /app/dist ./dist

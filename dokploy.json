@@ -1,0 +1,17 @@
+{
+  "name": "my-portafolio",
+  "type": "dockerfile",
+  "dockerfile": "./Dockerfile",
+  "buildArgs": {},
+  "env": {
+    "NODE_ENV": "production",
+    "HOST": "0.0.0.0",
+    "PORT": "4321"
+  },
+  "ports": [
+    {
+      "internal": 4321,
+      "external": 80
+    }
+  ]
+}
