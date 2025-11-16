@@ -1,6 +1,3 @@
----
-import { config } from '../config';
----
 
 <body>
     <section class="hero-section">
@@ -17,10 +14,10 @@ import { config } from '../config';
         
         <div class="hero-content">
             <div class="profile-image">
-                <img src="/images/profile.jpg" alt={config.name}>
+                <img src="/images/profile.jpg" alt="Duberney Obando Cano">
             </div>
             
-            <h1 class="hero-title">{config.name}</h1>
+            <h1 class="hero-title">Duberney Obando Cano</h1>
             
             <!-- Modern typewriter subtitle -->
             <p class="hero-subtitle text-lg text-gray-300 mt-2">
@@ -54,8 +51,6 @@ import { config } from '../config';
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
-
-    <script id="typewriter-data" type="application/json">{JSON.stringify(config.titles)}</script>
 
     <script>
         // Generador de partículas
@@ -97,7 +92,11 @@ import { config } from '../config';
     <script>
         // Modern typewriter that cycles through phrases with typing and deleting
         document.addEventListener('DOMContentLoaded', function () {
-            const phrases = JSON.parse(document.getElementById('typewriter-data')?.textContent || '[]');
+            const phrases = [
+                'Tecnólogo Análisis y Desarrollo de Software',
+                'Desarrollador de Software',
+                'Especialista en Ciberseguridad'
+            ];
 
             const typeEl = document.getElementById('typewriter');
             const cursorEl = document.getElementById('typewriter-cursor');

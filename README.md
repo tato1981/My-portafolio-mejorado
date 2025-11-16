@@ -1,6 +1,6 @@
 # 🚀 Mi Portafolio Personal
 
-Portafolio web moderno desarrollado con Astro y Tailwind CSS, optimizado para despliegue en Dokploy.
+Portafolio web moderno desarrollado con Astro y Tailwind CSS, listo para desplegar en Netlify.
 
 ## ✨ Características
 
@@ -8,25 +8,22 @@ Portafolio web moderno desarrollado con Astro y Tailwind CSS, optimizado para de
 - 📱 Totalmente responsive
 - ⚡ Rendimiento optimizado con Astro
 - 🎭 Animaciones suaves y transiciones
+- 📧 Formulario de contacto con Netlify Forms
 - 🌐 Preparado para producción
-- 🐳 Dockerizado para despliegue en Dokploy
 
 ## 🛠️ Tecnologías
 
 - **Framework**: Astro 5.13.11
 - **Estilos**: Tailwind CSS 3.4.6
 - **TypeScript**: 5.9.3
-- **Node.js**: 20+
+- **Formularios**: Netlify Forms
+- **Hosting**: Netlify
 
 ## 📦 Instalación
 
 ```bash
 # Instalar dependencias
 npm install
-
-# Configurar variables de entorno
-cp .env.example .env
-# Edita el archivo .env con tus datos personales
 
 # Desarrollo local
 npm run dev
@@ -38,36 +35,45 @@ npm run build
 npm run preview
 ```
 
-## ⚙️ Variables de Entorno
+## 🌐 Despliegue en Netlify
 
-Este proyecto usa variables de entorno para personalizar toda la información del portafolio.
+### Opción 1: Despliegue desde GitHub (Recomendado)
 
-### Configuración Rápida
+1. Sube tu código a GitHub
+2. Ve a [Netlify](https://netlify.com)
+3. Click en "Add new site" → "Import an existing project"
+4. Conecta tu repositorio de GitHub
+5. Configuración automática (Netlify detecta `netlify.toml`)
+6. Click en "Deploy"
+7. ¡Listo! Tu sitio estará en línea
 
-1. Copia `.env.example` a `.env`
-2. Edita los valores con tu información personal
-3. Las variables se cargan automáticamente
+### Opción 2: Despliegue CLI
 
-Ver la [Guía Completa de Variables de Entorno](./VARIABLES-ENTORNO.md) para más detalles.
+```bash
+# Instalar Netlify CLI
+npm install -g netlify-cli
 
-### Variables Principales
+# Login
+netlify login
 
-- **Información Personal**: Nombre, email, teléfono, ubicación
-- **Redes Sociales**: GitHub, LinkedIn, YouTube, Twitter, Instagram
-- **Títulos Profesionales**: 3 títulos que aparecen en el efecto typewriter
-- **Certificaciones**: URLs verificables de tus certificaciones
+# Desplegar
+netlify deploy --prod
+```
 
-## 🐳 Despliegue en Dokploy
+## 📧 Formulario de Contacto
 
-Este proyecto está completamente configurado para Dokploy. Ver [DOKPLOY-DEPLOY.md](./DOKPLOY-DEPLOY.md) para instrucciones detalladas.
+El formulario está configurado con **Netlify Forms**:
 
-### Configuración rápida:
+- ✅ Sin backend necesario
+- ✅ Anti-spam integrado (honeypot)
+- ✅ Notificaciones por email
+- ✅ Página de agradecimiento
 
-1. Conecta tu repositorio en Dokploy
-2. **Configura las variables de entorno** (ver [VARIABLES-ENTORNO.md](./VARIABLES-ENTORNO.md))
-3. Dokploy detectará automáticamente el `Dockerfile`
-4. Puerto expuesto: **4321**
-5. ¡Listo!
+### Configurar notificaciones:
+
+1. Ve a tu sitio en Netlify
+2. Settings → Forms → Form notifications
+3. Añade tu email para recibir los mensajes
 
 ## 📂 Estructura del Proyecto
 
@@ -79,10 +85,11 @@ Este proyecto está completamente configurado para Dokploy. Ver [DOKPLOY-DEPLOY.
 │   ├── components/  # Componentes Astro
 │   ├── layouts/     # Layouts
 │   ├── pages/       # Páginas
+│   │   ├── index.astro    # Página principal
+│   │   └── gracias.astro  # Página de agradecimiento
 │   ├── scripts/     # Scripts TypeScript
 │   └── styles/      # Estilos globales
-├── Dockerfile       # Configuración Docker
-└── .dockerignore    # Archivos excluidos del build
+└── netlify.toml     # Configuración de Netlify
 ```
 
 ## 🎯 Secciones
@@ -92,21 +99,7 @@ Este proyecto está completamente configurado para Dokploy. Ver [DOKPLOY-DEPLOY.
 - **Servicios**: Servicios que ofrezco
 - **Habilidades**: Stack tecnológico
 - **Proyectos**: Portfolio de trabajos
-- **Contacto**: Formulario de contacto
-
-## 🔧 Configuración
-
-El proyecto usa configuración estática (`output: 'static'`) para mejor rendimiento y compatibilidad.
-
-### Variables de Entorno
-
-Crea un archivo `.env` basado en `.env.example`:
-
-```env
-HOST=0.0.0.0
-PORT=4321
-NODE_ENV=production
-```
+- **Contacto**: Formulario funcional con Netlify Forms
 
 ## 🧞 Comandos
 
@@ -116,7 +109,17 @@ NODE_ENV=production
 | `npm run dev` | Servidor local en `localhost:4321`        |
 | `npm run build` | Construir sitio para producción en `./dist/` |
 | `npm run preview` | Vista previa local antes de desplegar  |
-| `npm start` | Iniciar servidor de producción            |
+
+## 📝 Personalización
+
+Edita los siguientes archivos para personalizar tu portafolio:
+
+- **src/components/Hero.astro** → Nombre y títulos
+- **src/components/About.astro** → Información personal
+- **src/components/Services.astro** → Servicios que ofreces
+- **src/components/Skills.astro** → Tecnologías
+- **src/components/Projects.astro** → Tus proyectos
+- **src/components/Footer.astro** → Redes sociales y contacto
 
 ## 📝 Licencia
 
