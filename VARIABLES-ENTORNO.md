@@ -143,8 +143,9 @@ PUBLIC_GITHUB_URL=https://github.com/juan
 
 ❌ **INSEGURO** (nunca hagas esto):
 ```env
-PUBLIC_API_SECRET_KEY=abc123xyz  # ¡Nunca!
-PUBLIC_DATABASE_PASSWORD=12345   # ¡Nunca!
+# NO uses variables PUBLIC_ para datos sensibles
+PUBLIC_API_SECRET=xxxxxxxx         # ¡Nunca!
+PUBLIC_DATABASE_PASS=xxxxxxxx      # ¡Nunca!
 ```
 
 ## 🧪 Testing
