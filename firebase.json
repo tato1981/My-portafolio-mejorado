@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "duberneydev",
+    "site": "duberneydevs",
     "public": "dist",
     "ignore": [
       "firebase.json",
