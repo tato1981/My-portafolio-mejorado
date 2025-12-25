@@ -1,178 +1,191 @@
 
-    
+
+
 <section id="contact" class="py-20 relative overflow-hidden min-h-screen flex items-center">
   <!-- Fondo idéntico al diseño anterior -->
   <div class="hero-background absolute inset-0 z-0"></div>
   <div class="grid-pattern z-0"></div>
-  
+
   <!-- Formas flotantes idénticas al diseño anterior -->
   <div class="floating-shapes absolute inset-0 z-0">
     <div class="floating-shape w-72 h-72 md:w-96 md:h-96 top-10 left-5 bg-blue-500/30 animation-delay-0"></div>
     <div class="floating-shape w-48 h-48 md:w-64 md:h-64 top-60 right-5 bg-purple-500/30 animation-delay-5000 animation-duration-20s"></div>
     <div class="floating-shape w-60 h-60 md:w-80 md:h-80 bottom-10 left-15 bg-cyan-500/30 animation-delay-10000 animation-duration-25s"></div>
   </div>
-  
+
   <!-- Partículas -->
   <div class="particles absolute inset-0 z-0" id="particles-container"></div>
-  
+
   <div class="container mx-auto px-4 relative z-10">
     <h2 class="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent bg-size-200 animate-textShine">
-      Contáctame
+      Hablemos
     </h2>
-    
-    <p class="text-xl text-center text-gray-300 mb-12 max-w-2xl mx-auto">
-      ¿Tienes un proyecto en mente? Hablemos sobre cómo puedo ayudarte a hacerlo realidad.
+
+    <p class="text-xl text-center text-gray-300 mb-16 max-w-2xl mx-auto">
+      ¿Tienes un proyecto en mente? Contáctame directamente a través de cualquiera de estos canales
     </p>
-    
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <!-- Disponibilidad -->
-      <div class="lg:col-span-1 space-y-6">
-        <div class="contact-info-card cyber-border rounded-xl p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
-          <h3 class="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-            Disponibilidad
+
+    <!-- Grid de métodos de contacto -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+      <!-- Email -->
+      <a href="mailto:duberney22915@gmail.com"
+         class="contact-method-card cyber-border rounded-xl p-8 hover:transform hover:-translate-y-2 transition-all duration-300 group">
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-envelope text-3xl text-cyan-400"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+            Email
           </h3>
-          
-          <div class="space-y-3">
-            <div class="flex justify-between">
-              <span class="text-gray-300">Proyectos Freelance</span>
-              <span class="text-cyan-400 font-semibold">Disponible</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-gray-300">Tiempo de Respuesta</span>
-              <span class="text-cyan-400 font-semibold">24-48 horas</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-gray-300">Idiomas</span>
-              <span class="text-cyan-400 font-semibold">Español, Inglés</span>
-            </div>
+          <p class="text-gray-400 mb-3 text-sm">Respuesta en 24-48 horas</p>
+          <p class="text-cyan-400 font-medium break-all">duberney22915@gmail.com</p>
+          <div class="mt-4 flex items-center text-sm text-gray-400 group-hover:text-cyan-400 transition-colors">
+            <span>Enviar correo</span>
+            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </div>
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/573145716188?text=Hola,%20me%20gustaría%20hablar%20sobre%20un%20proyecto"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="contact-method-card cyber-border rounded-xl p-8 hover:transform hover:-translate-y-2 transition-all duration-300 group">
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <i class="fab fa-whatsapp text-3xl text-green-400"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500">
+            WhatsApp
+          </h3>
+          <p class="text-gray-400 mb-3 text-sm">Respuesta inmediata</p>
+          <p class="text-green-400 font-medium">+57 314 571 6188</p>
+          <div class="mt-4 flex items-center text-sm text-gray-400 group-hover:text-green-400 transition-colors">
+            <span>Iniciar chat</span>
+            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </div>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/in/tu-usuario"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="contact-method-card cyber-border rounded-xl p-8 hover:transform hover:-translate-y-2 transition-all duration-300 group">
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/20 to-indigo-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <i class="fab fa-linkedin-in text-3xl text-blue-400"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
+            LinkedIn
+          </h3>
+          <p class="text-gray-400 mb-3 text-sm">Red profesional</p>
+          <p class="text-blue-400 font-medium">Conectemos</p>
+          <div class="mt-4 flex items-center text-sm text-gray-400 group-hover:text-blue-400 transition-colors">
+            <span>Ver perfil</span>
+            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Información adicional -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <!-- Disponibilidad -->
+      <div class="contact-info-card cyber-border rounded-xl p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
+        <h3 class="text-xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+          <i class="fas fa-calendar-check mr-2"></i>Disponibilidad
+        </h3>
+
+        <div class="space-y-3">
+          <div class="flex justify-between items-center">
+            <span class="text-gray-300">Proyectos Freelance</span>
+            <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 font-semibold text-sm">Disponible</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-gray-300">Tiempo de Respuesta</span>
+            <span class="text-cyan-400 font-semibold">24-48 horas</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-gray-300">Idiomas</span>
+            <span class="text-cyan-400 font-semibold">Español</span>
           </div>
           
-          <div class="mt-4 pt-4 border-t border-gray-700">
-            <div class="flex items-center">
-              <div class="w-3 h-3 rounded-full bg-green-500 mr-2 animate-pulse"></div>
-              <span class="text-green-400 font-medium">Disponible para nuevos proyectos</span>
-            </div>
+          <div class="flex justify-between items-center">
+            <span class="text-gray-300">Ubicación</span>
+            <span class="text-cyan-400 font-semibold">Colombia</span>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-4 border-t border-gray-700">
+          <div class="flex items-center">
+            <div class="w-3 h-3 rounded-full bg-green-500 mr-2 animate-pulse"></div>
+            <span class="text-green-400 font-medium text-sm">Disponible para nuevos proyectos</span>
           </div>
         </div>
       </div>
-      
-      <!-- Formulario de contacto -->
-      <div class="lg:col-span-2">
-        <div class="contact-card cyber-border rounded-xl p-8 hover:transform hover:-translate-y-2 transition-all duration-300">
-          <h3 class="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-            Envíame un Mensaje
-          </h3>
-          
-          <form
-            id="contact-form"
-            class="space-y-6"
-          >
-            <!-- Honeypot field - Campo oculto para detectar bots (OWASP A07) -->
-            <input
-              type="text"
-              name="website"
-              id="website"
-              tabindex="-1"
-              autocomplete="off"
-              style="position: absolute; left: -9999px; width: 1px; height: 1px;"
-              aria-hidden="true"
-            />
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Nombre Completo</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  maxlength="100"
-                  pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"
-                  class="w-full px-4 py-3 contact-input rounded-lg focus:outline-none transition-all duration-300"
-                  placeholder="Tu nombre"
-                />
-              </div>
-              
-              <div>
-                <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Correo Electrónico</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  maxlength="254"
-                  class="w-full px-4 py-3 contact-input rounded-lg focus:outline-none transition-all duration-300"
-                  placeholder="tu@email.com"
-                />
-              </div>
-            </div>
+      <!-- Horario y preferencias -->
+      <div class="contact-info-card cyber-border rounded-xl p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
+        <h3 class="text-xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+          <i class="fas fa-clock mr-2"></i>Horario de Atención
+        </h3>
 
+        <div class="space-y-3">
+          <div class="flex items-start">
+            <i class="fas fa-check-circle text-cyan-400 mr-3 mt-1"></i>
             <div>
-              <label for="subject" class="block text-sm font-medium text-gray-400 mb-2">Asunto</label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                required
-                minlength="5"
-                maxlength="200"
-                class="w-full px-4 py-3 contact-input rounded-lg focus:outline-none transition-all duration-300"
-                placeholder="¿Sobre qué quieres hablar?"
-              />
+              <p class="text-gray-300 font-medium">Lunes a Viernes</p>
+              <p class="text-gray-400 text-sm">9:00 AM - 6:00 PM (GMT-5)</p>
             </div>
-
+          </div>
+          <div class="flex items-start">
+            <i class="fas fa-check-circle text-cyan-400 mr-3 mt-1"></i>
             <div>
-              <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Mensaje</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                required
-                minlength="10"
-                maxlength="5000"
-                class="w-full px-4 py-3 contact-input rounded-lg focus:outline-none transition-all duration-300"
-                placeholder="Describe tu proyecto o consulta..."
-              ></textarea>
+              <p class="text-gray-300 font-medium">Sábados</p>
+              <p class="text-gray-400 text-sm">10:00 AM - 2:00 PM (GMT-5)</p>
             </div>
-            
-            <div class="flex items-center">
-              <input
-                type="checkbox"
-                id="consent"
-                name="consent"
-                required
-                class="w-4 h-4 text-cyan-500 bg-gray-800 border-gray-700 rounded focus:ring-cyan-500 focus:ring-2"
-              />
-              <label for="consent" class="ml-2 text-sm text-gray-400">
-                Acepto que mis datos sean procesados según la 
-                <a href="#" class="text-cyan-400 hover:underline">política de privacidad</a>
-              </label>
+          </div>
+          <div class="flex items-start">
+            <i class="fas fa-info-circle text-purple-400 mr-3 mt-1"></i>
+            <div>
+              <p class="text-gray-300 font-medium">Proyectos urgentes</p>
+              <p class="text-gray-400 text-sm">Disponibilidad especial vía WhatsApp</p>
             </div>
-            
-            <button
-              type="submit"
-              class="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 px-6 rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-cyan-500/50 font-medium flex items-center justify-center"
-            >
-              <i class="fas fa-paper-plane mr-2"></i> Enviar Mensaje
-            </button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
-    
-    <!-- Mensaje adicional -->
-    <div class="mt-12 text-center max-w-3xl mx-auto">
-      <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50">
-        <h3 class="text-xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-          ¿Prefieres contactarme directamente?
+
+    <!-- Call to action final -->
+    <div class="mt-12 text-center">
+      <div class="max-w-2xl mx-auto bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 rounded-xl p-8 cyber-border">
+        <i class="fas fa-rocket text-4xl text-cyan-400 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+          ¿Listo para comenzar tu proyecto?
         </h3>
-        <p class="text-gray-300">
-          También puedes escribirme directamente a través del formulario o contactarme a través de mis redes sociales. Estaré encantado de responder a tus preguntas.
+        <p class="text-gray-300 mb-6">
+          No importa si es una idea pequeña o un proyecto grande, me encantaría escucharte y ayudarte a hacerlo realidad.
         </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="mailto:duberney22915@gmail.com"
+             class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-cyan-500/50">
+            <i class="fas fa-envelope mr-2"></i>
+            Enviar Email
+          </a>
+          <a href="https://wa.me/573145716188?text=Hola,%20me%20gustaría%20hablar%20sobre%20un%20proyecto"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-medium rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all duration-300 shadow-lg hover:shadow-green-500/50">
+            <i class="fab fa-whatsapp mr-2"></i>
+            Chat en WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 <script>
 // Generador de partículas y animación de tarjetas al hacer scroll
 document.addEventListener('DOMContentLoaded', function () {
@@ -209,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Animación de las tarjetas al hacer scroll
-  const contactCards = document.querySelectorAll('.contact-card, .contact-info-card');
+  const contactCards = document.querySelectorAll('.contact-method-card, .contact-info-card');
   const observerOptions = {
     threshold: 0.3,
     rootMargin: '0px 0px -100px 0px'
@@ -232,65 +245,5 @@ document.addEventListener('DOMContentLoaded', function () {
       observer.observe(card);
     }
   });
-
-  // Manejo del envío del formulario
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const form = e.target as HTMLFormElement;
-      const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-      const originalButtonText = submitButton.innerHTML;
-
-      // Deshabilitar el botón y mostrar estado de carga
-      submitButton.disabled = true;
-      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Enviando...';
-
-      try {
-        // Obtener los datos del formulario
-        const formData = new FormData(form);
-        const data = {
-          name: formData.get('name'),
-          email: formData.get('email'),
-          subject: formData.get('subject'),
-          message: formData.get('message'),
-          website: formData.get('website') // Honeypot field
-        };
-
-        // Enviar los datos a la Cloud Function de Firebase
-        // NOTA: Reemplaza esta URL con tu URL de producción después del deploy
-        const functionUrl = window.location.hostname === 'localhost'
-          ? 'http://127.0.0.1:5001/duberneydevs/us-central1/sendContactEmail'
-          : 'https://us-central1-duberneydevs.cloudfunctions.net/sendContactEmail';
-
-        const response = await fetch(functionUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-
-        const result = await response.json();
-
-        if (result.success) {
-          // Mostrar mensaje de éxito
-          alert('¡Mensaje enviado correctamente! Te responderé pronto.');
-          form.reset();
-        } else {
-          // Mostrar mensaje de error
-          alert(result.message || 'Error al enviar el mensaje. Por favor, intenta de nuevo.');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        alert('Error al enviar el mensaje. Por favor, intenta de nuevo.');
-      } finally {
-        // Rehabilitar el botón
-        submitButton.disabled = false;
-        submitButton.innerHTML = originalButtonText;
-      }
-    });
-  }
 });
 </script>
