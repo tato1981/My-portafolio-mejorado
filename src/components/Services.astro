@@ -14,10 +14,7 @@
             <div class="floating-shape w-48 h-48 md:w-64 md:h-64 top-60 right-5 bg-purple-500/30 animation-delay-5000 animation-duration-20s"></div>
             <div class="floating-shape w-60 h-60 md:w-80 md:h-80 bottom-10 left-15 bg-cyan-500/30 animation-delay-10000 animation-duration-25s"></div>
         </div>
-        
-        <!-- Partículas -->
-        <div class="particles absolute inset-0 z-0" id="particles-container"></div>
-        
+
         <div class="container mx-auto px-4 relative z-10">
             <h2 class="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent bg-size-200 animate-textShine">
                 Servicios
@@ -167,49 +164,14 @@
     </section>
 
    <script>
-    // Generador de partículas (idéntico al diseño de contacto)
+    // Animación de las tarjetas al hacer scroll
     document.addEventListener('DOMContentLoaded', function() {
-        const particlesContainer = document.getElementById('particles-container');
-        // Verificar que particlesContainer existe
-        if (particlesContainer) {
-            const particleCount = 40;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Posición y propiedades aleatorias
-                const left = Math.random() * 100;
-                const delay = Math.random() * 15;
-                const duration = 15 + Math.random() * 10;
-                const size = 2 + Math.random() * 3;
-                
-                particle.style.left = `${left}%`;
-                particle.style.animationDelay = `${delay}s`;
-                particle.style.animationDuration = `${duration}s`;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                
-                // Color aleatorio entre azules y morados
-                const colors = [
-                    'rgba(59, 130, 246, 0.7)',
-                    'rgba(139, 92, 246, 0.7)',
-                    'rgba(6, 182, 212, 0.7)'
-                ];
-                const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                particle.style.backgroundColor = randomColor;
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
-        
-        // Animación de las tarjetas al hacer scroll - CORREGIDO
         const serviceCards = document.querySelectorAll('.service-card');
         const observerOptions = {
             threshold: 0.3,
             rootMargin: '0px 0px -100px 0px'
         };
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && entry.target instanceof HTMLElement) {
@@ -218,9 +180,8 @@
                 }
             });
         }, observerOptions);
-        
+
         serviceCards.forEach(card => {
-            // Verificar que card es un HTMLElement antes de acceder a .style
             if (card instanceof HTMLElement) {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(20px)';
@@ -229,7 +190,6 @@
             }
         });
     });
-    
 </script>
 </body>
 </html>
