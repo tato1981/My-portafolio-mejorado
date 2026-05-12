@@ -1,5 +1,6 @@
-
-
+---
+const currentYear = new Date().getFullYear();
+---
 
 <!-- Footer Mejorado -->
     <footer style="background: var(--header-bg);" class="py-12 text-gray-200 dark:text-gray-400 footer-glow transition-all duration-300">
@@ -116,7 +117,7 @@
             <!-- Derechos Reservados y Navegación Adicional -->
             <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <div class="text-center md:text-left">
-                    <p class="text-sm">&copy; 2025 <span class="text-cyan-400 font-semibold">MyPortafolio</span>. Todos los derechos reservados.</p>
+                    <p class="text-sm">&copy; {currentYear} <span class="text-cyan-400 font-semibold">MyPortafolio</span>. Todos los derechos reservados.</p>
                     <p class="text-xs mt-1 text-white">Desarrollado con ❤️ y mucho café</p>
                 </div>
                 

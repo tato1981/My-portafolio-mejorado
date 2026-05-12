@@ -81,6 +81,15 @@ import Footer from '../components/Footer.astro';
     
     // Hacer la función disponible globalmente
     window.toggleTheme = toggleTheme;
+
+    // Unregister any existing service workers to solve 404 /sw.js
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for(let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
   </script>
   
   <style is:global>
