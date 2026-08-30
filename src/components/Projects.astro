@@ -1,175 +1,180 @@
+---
+// Projects.astro - Rediseñado editorial monocromo
+---
 
-    
-</head>
-<body class="bg-gray-900 text-white min-h-screen overflow-x-hidden">
-    <!-- Sección Proyectos -->
-    <section id="projects" class="py-20 relative overflow-hidden min-h-screen flex items-center">
-        <!-- Fondo idéntico al diseño anterior -->
-        <div class="hero-background absolute inset-0 z-0"></div>
-        <div class="grid-pattern z-0"></div>
-        
-        <!-- Formas flotantes idénticas al diseño anterior -->
-        <div class="floating-shapes absolute inset-0 z-0">
-            <div class="floating-shape w-72 h-72 md:w-96 md:h-96 top-10 left-5 bg-blue-500/30 animation-delay-0"></div>
-            <div class="floating-shape w-48 h-48 md:w-64 md:h-64 top-60 right-5 bg-purple-500/30 animation-delay-5000 animation-duration-20s"></div>
-            <div class="floating-shape w-60 h-60 md:w-80 md:h-80 bottom-10 left-15 bg-cyan-500/30 animation-delay-10000 animation-duration-25s"></div>
+<section id="projects" class="py-12 md:py-16 relative">
+    <div class="container mx-auto px-4">
+        <!-- Encabezado Editorial con Nº -->
+        <div class="section-header animate-[fadeInUp_0.6s_ease-out]">
+            <div class="section-header-inner">
+                <div class="section-header-title">
+                    <div class="flex items-center gap-3 mb-1">
+                        <span class="section-number">03</span>
+                        <hr class="section-divider" />
+                    </div>
+                    <h2>Mis Proyectos</h2>
+                    <p>Soluciones empresariales desarrolladas bajo principios de modularidad, eficiencia y seguridad de datos.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="container mx-auto px-4 relative z-10">
-            <h2 class="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent bg-size-200 animate-textShine">
-                Mis Proyectos
-            </h2>
-            
-            <p class="text-xl text-center text-gray-300 mb-12 max-w-2xl mx-auto">
-                Soluciones empresariales desarrolladas con las últimas tecnologías y mejores prácticas de desarrollo
-            </p>
-
-            <!-- Cuadrícula de Proyectos -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Proyecto 1: Sistema de Ventas -->
-                <div class="project-card cyber-border rounded-xl overflow-hidden hover:transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="project-image aspect-video relative overflow-hidden bg-gray-800">
+        <!-- Cuadrícula de Proyectos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 max-w-7xl mx-auto">
+            <!-- Proyecto 1 -->
+            <div class="cyber-card !p-0 overflow-hidden flex flex-col justify-between">
+                <div class="absolute top-2 right-3 font-mono text-[9px] text-[var(--accent-color)] border border-[var(--accent-border)] bg-[#040508]/80 backdrop-blur-md px-1.5 py-0.5 rounded select-none z-10">[SYS_OK]</div>
+                <div>
+                    <div class="aspect-video relative overflow-hidden bg-[var(--tech-tag-bg)] border-b border-[var(--border-color)]">
                         <img
                             src="/images/gestion de ventas.png"
                             alt="Sistema de Gestión de Ventas"
                             loading="lazy"
-                            class="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-500"
+                            class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
                         >
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Sistema de Gestión de Ventas</h3>
-                        <p class="text-gray-400 mb-4">
-                            Plataforma completa para la gestión de ventas, inventario, facturación y reportes analíticos en tiempo real. Incluye módulos de control de stock, punto de venta y gestión de clientes.
+                        <div class="font-mono text-[9px] text-[var(--text-subtle)] mb-1">[REPO: SALES_ERP_V2]</div>
+                        <h3 class="text-xl font-bold mb-2 text-[var(--text-color)]">Sistema de Gestión de Ventas</h3>
+                        <p class="text-sm text-[var(--text-muted)] mb-4 leading-relaxed">
+                            Plataforma empresarial para la gestión integral de inventarios, facturación, control de stock y reportes financieros analíticos.
                         </p>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">JWT</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-cyan-400"><i class="fas fa-calendar mr-1"></i> 2025</span>
-                            <span class="text-sm text-purple-400"><i class="fas fa-lock mr-1"></i> Proyecto Privado</span>
-                        </div>
                     </div>
                 </div>
+                <div class="p-6 pt-0">
+                    <div class="flex flex-wrap mb-4">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">JWT Auth</span>
+                    </div>
+                    <div class="flex justify-between items-center text-xs font-semibold pt-3 border-t border-[var(--border-color)]">
+                        <span class="text-[var(--accent-color)] flex items-center gap-1 font-mono">
+                            <i class="fas fa-calendar"></i> 2025
+                        </span>
+                        <span class="text-[var(--text-muted)] flex items-center gap-1 font-mono">
+                            <i class="fas fa-lock"></i> Interno / Privado
+                        </span>
+                    </div>
+                </div>
+            </div>
 
-                <!-- Proyecto 2: Sistema de Recordatorios -->
-                <div class="project-card cyber-border rounded-xl overflow-hidden hover:transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="project-image aspect-video relative overflow-hidden bg-gray-800">
+            <!-- Proyecto 2 -->
+            <div class="cyber-card !p-0 overflow-hidden flex flex-col justify-between">
+                <div class="absolute top-2 right-3 font-mono text-[9px] text-[var(--accent-color)] border border-[var(--accent-border)] bg-[#040508]/80 backdrop-blur-md px-1.5 py-0.5 rounded select-none z-10">[SYS_OK]</div>
+                <div>
+                    <div class="aspect-video relative overflow-hidden bg-[var(--tech-tag-bg)] border-b border-[var(--border-color)]">
                         <img
                             src="/images/sistema recordatorios.png"
                             alt="Sistema de Recordatorios"
                             loading="lazy"
-                            class="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-500"
+                            class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
                         >
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Sistema de Recordatorios Inteligente</h3>
-                        <p class="text-gray-400 mb-4">
-                            Aplicación para gestión de recordatorios y tareas con notificaciones push, sincronización en la nube y categorización automática. Interfaz intuitiva y multiplataforma.
+                        <div class="font-mono text-[9px] text-[var(--text-subtle)] mb-1">[REPO: ALERT_SYSTEM_V1]</div>
+                        <h3 class="text-xl font-bold mb-2 text-[var(--text-color)]">Sistema de Alertas Inteligente</h3>
+                        <p class="text-sm text-[var(--text-muted)] mb-4 leading-relaxed">
+                            Aplicación web progresiva orientada a la calendarización de tareas corporativas con notificaciones push y sincronización cloud.
                         </p>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">PWA</span>
-                            <span class="tech-tag">Cloud Functions</span>
-                            <span class="tech-tag">FCM</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-cyan-400"><i class="fas fa-calendar mr-1"></i> 2025</span>
-                            <span class="text-sm text-purple-400"><i class="fas fa-lock mr-1"></i> Proyecto Privado</span>
-                        </div>
                     </div>
                 </div>
+                <div class="p-6 pt-0">
+                    <div class="flex flex-wrap mb-4">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">PWA</span>
+                        <span class="tech-tag">Cloud Functions</span>
+                        <span class="tech-tag">FCM</span>
+                    </div>
+                    <div class="flex justify-between items-center text-xs font-semibold pt-3 border-t border-[var(--border-color)]">
+                        <span class="text-[var(--accent-color)] flex items-center gap-1 font-mono">
+                            <i class="fas fa-calendar"></i> 2025
+                        </span>
+                        <span class="text-[var(--text-muted)] flex items-center gap-1 font-mono">
+                            <i class="fas fa-lock"></i> Interno / Privado
+                        </span>
+                    </div>
+                </div>
+            </div>
 
-                <!-- Proyecto 3: Sistema Hotelero -->
-                <div class="project-card cyber-border rounded-xl overflow-hidden hover:transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="project-image aspect-video relative overflow-hidden bg-gray-800">
+            <!-- Proyecto 3 -->
+            <div class="cyber-card !p-0 overflow-hidden flex flex-col justify-between">
+                <div class="absolute top-2 right-3 font-mono text-[9px] text-[var(--accent-color)] border border-[var(--accent-border)] bg-[#040508]/80 backdrop-blur-md px-1.5 py-0.5 rounded select-none z-10">[SYS_OK]</div>
+                <div>
+                    <div class="aspect-video relative overflow-hidden bg-[var(--tech-tag-bg)] border-b border-[var(--border-color)]">
                         <img
                             src="/images/sistema hotelero.png"
                             alt="Sistema de Gestión Hotelera"
                             loading="lazy"
-                            class="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-500"
+                            class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
                         >
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Sistema de Gestión Hotelera</h3>
-                        <p class="text-gray-400 mb-4">
-                            Solución integral para hoteles que incluye reservas online, check-in/check-out digital, gestión de habitaciones, facturación y reportes gerenciales. Sistema multiusuario con roles.
+                        <div class="font-mono text-[9px] text-[var(--text-subtle)] mb-1">[REPO: HOTEL_ERP_SEC]</div>
+                        <h3 class="text-xl font-bold mb-2 text-[var(--text-color)]">Sistema de Gestión Hotelera</h3>
+                        <p class="text-sm text-[var(--text-muted)] mb-4 leading-relaxed">
+                            ERP hotelero que integra motor de reservas online en vivo, control de disponibilidad de habitaciones, facturación automatizada y roles.
                         </p>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-tag">Angular</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Django</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">Redis</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-cyan-400"><i class="fas fa-calendar mr-1"></i> 2025</span>
-                            <span class="text-sm text-purple-400"><i class="fas fa-lock mr-1"></i> Proyecto Privado</span>
-                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Sección de proyectos adicionales -->
-            <div class="mt-16 text-center">
-                <h3 class="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Tecnologías y Herramientas</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300">
-                        <i class="fas fa-mobile-alt text-3xl text-cyan-400 mb-2"></i>
-                        <h4 class="font-bold">Apps Móviles</h4>
-                        <p class="text-sm text-gray-400 mt-2">Desarrollo multiplataforma con React Native</p>
+                <div class="p-6 pt-0">
+                    <div class="flex flex-wrap mb-4">
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Redis Cache</span>
                     </div>
-                    <div class="p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300">
-                        <i class="fas fa-cloud text-3xl text-cyan-400 mb-2"></i>
-                        <h4 class="font-bold">Cloud Solutions</h4>
-                        <p class="text-sm text-gray-400 mt-2">Despliegue en AWS, Azure y Firebase</p>
-                    </div>
-                    <div class="p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300">
-                        <i class="fas fa-shield-alt text-3xl text-cyan-400 mb-2"></i>
-                        <h4 class="font-bold">Seguridad Web</h4>
-                        <p class="text-sm text-gray-400 mt-2">Implementación OWASP y auditorías</p>
-                    </div>
-                    <div class="p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300">
-                        <i class="fas fa-database text-3xl text-cyan-400 mb-2"></i>
-                        <h4 class="font-bold">Bases de Datos</h4>
-                        <p class="text-sm text-gray-400 mt-2">SQL, NoSQL y optimización</p>
+                    <div class="flex justify-between items-center text-xs font-semibold pt-3 border-t border-[var(--border-color)]">
+                        <span class="text-[var(--accent-color)] flex items-center gap-1 font-mono">
+                            <i class="fas fa-calendar"></i> 2025
+                        </span>
+                        <span class="text-[var(--text-muted)] flex items-center gap-1 font-mono">
+                            <i class="fas fa-lock"></i> Interno / Privado
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <script>
-        // Animación de las tarjetas de proyectos al hacer scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const projectCards = document.querySelectorAll('.project-card');
-            const observerOptions = {
-                threshold: 0.3,
-                rootMargin: '0px 0px -100px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.target instanceof HTMLElement) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            projectCards.forEach(card => {
-                if (card instanceof HTMLElement) {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    observer.observe(card);
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+        <!-- Infraestructura y Soluciones -->
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-2xl font-bold mb-8 text-[var(--text-color)] text-center">Infraestructura y Soluciones</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="cyber-card text-center">
+                    <div class="absolute top-2 right-3 font-mono text-[8px] text-[var(--text-subtle)] select-none">[INF: MOBILE]</div>
+                    <div class="icon-box mx-auto mb-4">
+                        <i class="fas fa-mobile-screen-button"></i>
+                    </div>
+                    <h4 class="font-bold mb-1 text-[var(--text-color)]">Aplicaciones Móviles</h4>
+                    <p class="text-xs text-[var(--text-muted)] leading-relaxed">Interfaces híbridas rápidas y robustas con React Native.</p>
+                </div>
+                <div class="cyber-card text-center">
+                    <div class="absolute top-2 right-3 font-mono text-[8px] text-[var(--text-subtle)] select-none">[INF: CLOUD]</div>
+                    <div class="icon-box mx-auto mb-4">
+                        <i class="fas fa-cloud-arrow-up"></i>
+                    </div>
+                    <h4 class="font-bold mb-1 text-[var(--text-color)]">Soluciones Cloud</h4>
+                    <p class="text-xs text-[var(--text-muted)] leading-relaxed">Despliegue y administración segura en AWS, Azure y GCP.</p>
+                </div>
+                <div class="cyber-card text-center">
+                    <div class="absolute top-2 right-3 font-mono text-[8px] text-[var(--text-subtle)] select-none">[INF: SEC]</div>
+                    <div class="icon-box mx-auto mb-4">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h4 class="font-bold mb-1 text-[var(--text-color)]">Seguridad Web</h4>
+                    <p class="text-xs text-[var(--text-muted)] leading-relaxed">Implementación de cabeceras seguras y saneamiento de entradas.</p>
+                </div>
+                <div class="cyber-card text-center">
+                    <div class="absolute top-2 right-3 font-mono text-[8px] text-[var(--text-subtle)] select-none">[INF: DATA]</div>
+                    <div class="icon-box mx-auto mb-4">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h4 class="font-bold mb-1 text-[var(--text-color)]">Optimización SQL/NoSQL</h4>
+                    <p class="text-xs text-[var(--text-muted)] leading-relaxed">Normalización, indexación y diseño de bases de datos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

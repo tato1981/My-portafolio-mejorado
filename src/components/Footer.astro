@@ -1,174 +1,138 @@
 ---
 const currentYear = new Date().getFullYear();
 ---
+<!-- Footer - MONOCROMO TOTAL (sin colores multicolor, TODO en azul acento) -->
+<footer class="bg-[var(--header-bg)] border-t border-[var(--border-color)] py-14 text-[var(--text-color)] mt-auto transition-colors duration-300">
+    <div class="container mx-auto px-4">
+        <!-- Contenedor Principal -->
+        <div class="flex flex-col lg:flex-row justify-between items-start gap-10">
 
-<!-- Footer Mejorado -->
-    <footer style="background: var(--header-bg);" class="py-12 text-gray-200 dark:text-gray-400 footer-glow transition-all duration-300">
-        <div class="container mx-auto px-4">
-            <!-- Contenedor Principal -->
-            <div class="flex flex-col lg:flex-row justify-between items-center space-y-8 lg:space-y-0">
-                
-                <!-- Sección de Redes Sociales -->
-                <div class="flex flex-col items-center lg:items-start space-y-4">
-                    <h3 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">
-                        Conéctate Conmigo
-                    </h3>
-                    <div class="flex space-x-5">
-                        <!-- LinkedIn -->
-                        <a href="https://linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer"
-                           class="social-icon text-white hover:text-blue-400 transition-all duration-300">
-                            <i class="fab fa-linkedin-in text-2xl"></i>
-                        </a>
-
-                        <!-- YouTube -->
-                        <a href="https://youtube.com/tu-canal" target="_blank" rel="noopener noreferrer"
-                           class="social-icon text-white hover:text-red-500 transition-all duration-300">
-                            <i class="fab fa-youtube text-2xl"></i>
-                        </a>
-
-                        <!-- Twitter/X -->
-                        <a href="https://x.com/tu-usuario" target="_blank" rel="noopener noreferrer"
-                           class="social-icon text-white hover:text-cyan-300 transition-all duration-300">
-                            <i class="fab fa-x text-2xl"></i>
-                        </a>
-
-                        <!-- Instagram -->
-                        <a href="https://instagram.com/tu-usuario" target="_blank" rel="noopener noreferrer"
-                           class="social-icon text-white hover:text-pink-500 transition-all duration-300">
-                            <i class="fab fa-instagram text-2xl"></i>
-                        </a>
-                    </div>
-                    <p class="text-sm mt-2 max-w-xs text-center lg:text-left">
-                        Sígueme en mis redes sociales para estar al tanto de mis últimos proyectos y actualizaciones.
-                    </p>
-                </div>
-
-                <!-- Información de Contacto -->
-                <div class="flex flex-col items-center space-y-4 text-center">
-                    <h3 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">
-                        Contacto Directo
-                    </h3>
-                    <div class="space-y-2">
-                        <p class="flex items-center justify-center lg:justify-start">
-                            <i class="fas fa-envelope text-cyan-400 mr-2"></i>
-                            <a href="mailto:duberney22915@gmail.com" 
-                               class="contact-link text-cyan-400 hover:text-cyan-300 transition-colors duration-300">
-                                duberney22915@gmail.com
-                            </a>
-                        </p>
-                        <p class="flex items-center justify-center lg:justify-start">
-                            <i class="fas fa-phone text-cyan-400 mr-2"></i>
-                            <span>+57 3145716188</span>
-                        </p>
-                        <p class="flex items-center justify-center lg:justify-start">
-                            <i class="fas fa-map-marker-alt text-cyan-400 mr-2"></i>
-                            <span>Colombia</span>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Certificaciones con imágenes más grandes y centradas -->
-                <div class="flex flex-col items-center w-full lg:w-auto">
-                    <h3 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-4 text-center">
-                        Certificaciones
-                    </h3>
-                    <div class="flex flex-wrap justify-center gap-4 max-w-md">
-                        <!-- Certificación 1 - CertJoin -->
-                        <div class="certification-card rounded-lg p-4 w-28 h-28 flex items-center justify-center">
-                            <a href="https://campus.certjoin.com/mod/customcert/verify_certificate.php" 
-                               target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
-                                <img src="/images/certJion1.png" 
-                                     alt="Certificación CertJoin" 
-                                     class="certification-img w-16 h-16 object-contain rounded-lg">
-                                <p class="text-xs mt-2 text-center text-gray-300 group-hover:text-cyan-300 transition-colors">CertJoin</p>
-                            </a>
-                        </div>
-
-                        <!-- Certificación 2 - Hacking Ético -->
-                        <div class="certification-card rounded-lg p-4 w-28 h-28 flex items-center justify-center">
-                            <a href="https://www.ucatalunya.edu.co/diplomados/hacking-etico" 
-                               target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
-                                <img src="/images/udecataluna.png" 
-                                     alt="Certificación Hacking Ético" 
-                                     class="certification-img w-16 h-16 object-contain rounded-lg">
-                                <p class="text-xs mt-2 text-center text-gray-300 group-hover:text-cyan-300 transition-colors">Hacking Ético</p>
-                            </a>
-                        </div>
-
-                        <!-- Certificación 3 - Senatec -->
-                        <div class="certification-card rounded-lg p-4 w-28 h-28 flex items-center justify-center">
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
-                                <img src="/images/senatec.png" 
-                                     alt="Certificación Senatec" 
-                                     class="certification-img w-16 h-16 object-contain rounded-lg">
-                                <p class="text-xs mt-2 text-center text-gray-300 group-hover:text-cyan-300 transition-colors">Senatec</p>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="text-xs text-white text-center mt-4 max-w-xs">
-                        Haz clic en cada certificación para verificar su autenticidad
-                    </p>
-                </div>
-            </div>
-
-            <!-- Línea Separadora -->
-            <div class="border-t border-indigo-800/50 my-8"></div>
-
-            <!-- Derechos Reservados y Navegación Adicional -->
-            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                <div class="text-center md:text-left">
-                    <p class="text-sm">&copy; {currentYear} <span class="text-cyan-400 font-semibold">MyPortafolio</span>. Todos los derechos reservados.</p>
-                    <p class="text-xs mt-1 text-white">Desarrollado con ❤️ y mucho café</p>
-                </div>
-                
-                <div class="flex space-x-6 flex-wrap justify-center">
-                    <a href="#" class="text-sm hover:text-cyan-400 transition-colors duration-300">Política de Privacidad</a>
-                    <a href="#" class="text-sm hover:text-cyan-400 transition-colors duration-300">Términos de Servicio</a>
-                    <a href="#top" class="text-sm hover:text-cyan-400 transition-colors duration-300 flex items-center">
-                        <i class="fas fa-arrow-up mr-1"></i> Volver Arriba
+            <!-- COLUMNA 1: Redes Sociales -->
+            <div class="flex flex-col items-start space-y-5 max-w-sm w-full lg:w-auto">
+                <h3 class="text-lg font-bold text-[var(--accent-color)]">
+                    Conéctate Conmigo
+                </h3>
+                <!-- REDES SOCIALES: Con colores de marca reales por defecto -->
+                <div class="flex space-x-3">
+                    <a href="https://linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer"
+                       class="w-10 h-10 rounded-lg border border-[#0077b5]/30 bg-[var(--card-bg)] text-[#0077b5] hover:border-[#0077b5] hover:bg-[#0077b5]/10 flex items-center justify-center transition-all" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in text-sm"></i>
+                    </a>
+                    <a href="https://youtube.com/tu-canal" target="_blank" rel="noopener noreferrer"
+                       class="w-10 h-10 rounded-lg border border-[#ff0000]/30 bg-[var(--card-bg)] text-[#ff0000] hover:border-[#ff0000] hover:bg-[#ff0000]/10 flex items-center justify-center transition-all" aria-label="YouTube">
+                        <i class="fab fa-youtube text-sm"></i>
+                    </a>
+                    <a href="https://x.com/tu-usuario" target="_blank" rel="noopener noreferrer"
+                       class="w-10 h-10 rounded-lg border border-black/20 dark:border-white/30 bg-[var(--card-bg)] hover:border-black dark:hover:border-white hover:bg-black/5 dark:hover:bg-white/10 flex items-center justify-center transition-all" aria-label="X (Twitter)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 text-black dark:text-white fill-current" aria-hidden="true">
+                            <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/tu-usuario" target="_blank" rel="noopener noreferrer"
+                       class="w-10 h-10 rounded-lg border border-[#e1306c]/30 bg-[var(--card-bg)] text-[#e1306c] hover:border-[#e1306c] hover:bg-[#e1306c]/10 flex items-center justify-center transition-all" aria-label="Instagram">
+                        <i class="fab fa-instagram text-sm"></i>
                     </a>
                 </div>
+                <p class="text-xs text-[var(--text-muted)] leading-relaxed">
+                    Sigue mis canales para ver publicaciones sobre DevSecOps y Hacking Ético.
+                </p>
+            </div>
+
+            <!-- COLUMNA 2: Contacto Directo -->
+            <div class="flex flex-col items-start space-y-4 w-full lg:w-auto">
+                <h3 class="text-lg font-bold text-[var(--accent-color)]">
+                    Contacto Directo
+                </h3>
+                <div class="space-y-3 text-sm">
+                    <p class="flex items-center gap-2.5">
+                        <i class="fas fa-envelope text-[var(--accent-color)] text-xs"></i>
+                        <a href="mailto:duberney22915@gmail.com"
+                           class="hover:text-[var(--accent-color)] transition-colors font-semibold text-[var(--text-color)]">
+                            duberney22915@gmail.com
+                        </a>
+                    </p>
+                    <p class="flex items-center gap-2.5">
+                        <i class="fas fa-phone text-[var(--accent-color)] text-xs"></i>
+                        <a href="https://wa.me/573145716188" target="_blank" rel="noopener noreferrer"
+                           class="hover:text-[var(--accent-color)] transition-colors font-semibold text-[var(--text-color)]">
+                            +57 314 571 6188
+                        </a>
+                    </p>
+                    <p class="flex items-center gap-2.5">
+                        <i class="fas fa-map-marker-alt text-[var(--accent-color)] text-xs"></i>
+                        <span class="text-[var(--text-muted)]">Colombia</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- COLUMNA 3: Certificaciones -->
+            <div class="flex flex-col items-start w-full lg:w-auto">
+                <h3 class="text-lg font-bold text-[var(--accent-color)] mb-4">
+                    Certificaciones
+                </h3>
+                <div class="flex gap-3">
+                    <div class="cert-card">
+                        <a href="https://campus.certjoin.com/mod/customcert/verify_certificate.php"
+                           target="_blank" rel="noopener noreferrer" class="flex flex-col items-center">
+                            <img src="/images/certJion1.png"
+                                 alt="CertJoin"
+                                 class="w-10 h-10 object-contain rounded-md" />
+                            <span class="text-[10px] mt-2 text-[var(--text-muted)] font-medium text-center">CertJoin</span>
+                        </a>
+                    </div>
+                    <div class="cert-card">
+                        <a href="https://www.ucatalunya.edu.co/diplomados/hacking-etico"
+                           target="_blank" rel="noopener noreferrer" class="flex flex-col items-center">
+                            <img src="/images/udecataluna.png"
+                                 alt="Hacking Ético"
+                                 class="w-10 h-10 object-contain rounded-md" />
+                            <span class="text-[10px] mt-2 text-[var(--text-muted)] font-medium text-center">Hacking Ético</span>
+                        </a>
+                    </div>
+                    <div class="cert-card">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center">
+                            <img src="/images/senatec.png"
+                                 alt="Senatec"
+                                 class="w-10 h-10 object-contain rounded-md" />
+                            <span class="text-[10px] mt-2 text-[var(--text-muted)] font-medium text-center">Senatec</span>
+                        </a>
+                    </div>
+                </div>
+                <span class="text-[10px] text-[var(--text-subtle)] mt-2.5">Haz clic para verificar autenticidad.</span>
             </div>
         </div>
-    </footer>
 
-    <script>
-        // Smooth scroll para el enlace "Volver Arriba"
-        document.addEventListener('DOMContentLoaded', function() {
-            const backToTopLink = document.querySelector('a[href="#top"]');
-            if (backToTopLink) {
-                backToTopLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
+        <!-- Línea Separadora -->
+        <div class="border-t border-[var(--border-color)] my-10"></div>
+
+        <!-- Derechos Reservados -->
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[var(--text-muted)] font-medium">
+            <div class="text-center md:text-left">
+                <p>&copy; {currentYear} Duberney Obando Cano. Todos los derechos reservados.</p>
+            </div>
+
+            <div class="flex space-x-6 flex-wrap justify-center">
+                <a href="#" class="hover:text-[var(--accent-color)] transition-colors">Privacidad</a>
+                <a href="#" class="hover:text-[var(--accent-color)] transition-colors">Términos</a>
+                <a href="#top" id="back-to-top" class="hover:text-[var(--accent-color)] transition-colors flex items-center gap-1.5">
+                    <i class="fas fa-arrow-up"></i> Volver Arriba
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const backToTop = document.getElementById('back-to-top');
+        if (backToTop) {
+            backToTop.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
                 });
-            }
-
-            // Generar partículas de fondo
-            const particleCount = 40;
-            const particlesContainer = document.getElementById('particles-container');
-
-            if (particlesContainer) {
-                for (let i = 0; i < particleCount; i++) {
-                    const particle = document.createElement('div');
-                    particle.className = 'particle';
-
-                    // Asignar estilos
-                    Object.assign(particle.style, {
-                        left: `${Math.random() * 100}%`,
-                        animationDelay: `${Math.random() * 15}s`,
-                        animationDuration: `${15 + Math.random() * 10}s`,
-                        width: `${2 + Math.random() * 3}px`,
-                        height: `${2 + Math.random() * 3}px`,
-                        backgroundColor: ['rgba(59, 130, 246, 0.7)', 'rgba(139, 92, 246, 0.7)', 'rgba(6, 182, 212, 0.7)'][Math.floor(Math.random() * 3)]
-                    });
-
-                    particlesContainer.appendChild(particle);
-                }
-            }
-        });
-    </script>
-</body>
-</html>
+            });
+        }
+    });
+</script>

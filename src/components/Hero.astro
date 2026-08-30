@@ -1,116 +1,118 @@
+---
+// Hero.astro - Rediseñado asimétrico editorial
+---
 
-<body>
-    <section class="hero-section">
-        <div class="hero-background"></div>
-        <div class="grid-pattern"></div>
-        
-        <div class="floating-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
+<section class="relative pt-8 pb-16 md:pt-12 md:pb-24 overflow-hidden -mt-10 md:-mt-16">
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] items-start gap-12 lg:gap-16">
+            <!-- COLUMNA IZQUIERDA: Texto, Badge, Stats, Botones -->
+            <div class="order-2 lg:order-1 animate-[fadeInUp_0.8s_ease-out] space-y-6">
+                <!-- Badge Profesional Sólido -->
+                <div>
+                    <div class="hero-badge mb-2">
+                        <span class="hero-badge-dot"></span>
+                        Especialista en Seguridad Ofensiva &amp; DevSecOps
+                    </div>
+                </div>
+
+                <!-- Nombre Principal -->
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05]">
+                    <span class="block text-[var(--text-color)]">Duberney</span>
+                    <span class="block text-[var(--text-color)]">Obando Cano</span>
+                </h1>
+
+                <!-- Typewriter Limpio -->
+                <div class="h-8 flex items-start">
+                    <p class="text-lg md:text-xl font-medium font-mono">
+                        <span class="sr-only">Títulos: </span>
+                        <span id="typewriter" class="text-[var(--accent-color)] font-bold"></span>
+                        <span id="typewriter-cursor" class="inline-block w-0.5 h-5 md:h-6 bg-[var(--accent-color)] ml-1 animate-pulse" aria-hidden="true"></span>
+                    </p>
+                </div>
+
+                <!-- Descripción introductoria -->
+                <p class="text-base md:text-lg text-[var(--text-muted)] max-w-xl leading-relaxed">
+                    Desarrollo software empresarial robusto y auditorías de ciberseguridad.
+                    Combino ingeniería full-stack con seguridad desde el diseño para entregar sistemas resilientes.
+                </p>
+
+                <!-- Especialidades Planas (monocromo) -->
+                <div class="flex flex-wrap gap-2 pt-2">
+                    <div class="specialty">
+                        <i class="fas fa-code"></i>
+                        Full Stack
+                    </div>
+                    <div class="specialty">
+                        <i class="fas fa-shield-alt"></i>
+                        Auditorías
+                    </div>
+                    <div class="specialty">
+                        <i class="fas fa-user-secret"></i>
+                        Hacking Ético
+                    </div>
+                    <div class="specialty">
+                        <i class="fas fa-cloud"></i>
+                        DevSecOps
+                    </div>
+                </div>
+
+                <!-- Botones de Acción Sólidos Centrados -->
+                <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
+                    <a href="#contact" class="btn-primary w-full sm:w-auto justify-center">
+                        <i class="fas fa-envelope"></i>
+                        Contáctame
+                    </a>
+                    <a href="#projects" class="btn-secondary w-full sm:w-auto justify-center">
+                        <i class="fas fa-briefcase"></i>
+                        Ver Proyectos
+                    </a>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA: Foto de perfil -->
+            <div class="order-1 lg:order-2 flex justify-center lg:justify-end animate-[fadeInUp_0.9s_ease-out] pt-4 lg:pt-2">
+                <div class="relative">
+                    <!-- Decoración de fondo: marco geométrico sólido HUD -->
+                    <div aria-hidden="true" class="absolute -top-4 -right-4 w-full h-full border border-[var(--accent-color)] pointer-events-none opacity-40"></div>
+                    <div aria-hidden="true" class="absolute -bottom-4 -left-4 w-full h-full border border-[var(--border-color-strong)] pointer-events-none opacity-50"></div>
+                    
+                    <!-- Marcadores HUD de esquinas para la foto de perfil -->
+                    <div class="absolute -top-4 -left-4 text-[var(--accent-color)] font-mono text-[9px] select-none pointer-events-none opacity-60">+ [SEC_CAM_01]</div>
+                    <div class="absolute -bottom-4 -right-4 text-[var(--accent-color)] font-mono text-[9px] select-none pointer-events-none opacity-60">[SYS_OK] +</div>
+                    
+                    <!-- Foto Rediseñada con marco rígido y efecto de escaneo -->
+                    <div class="relative z-10 w-72 h-72 sm:w-80 sm:h-80 border border-[var(--accent-color)] bg-[var(--card-bg)] p-1 shadow-2xl overflow-hidden">
+                        <img src="/images/profile.jpg" alt="Duberney Obando Cano" loading="eager" class="w-full h-full object-cover rounded-none" />
+                        <!-- Capa de escaneo cyber -->
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--accent-color)]/5 to-transparent pointer-events-none animate-pulse"></div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div class="hero-content">
-            <div class="profile-image">
-                <img src="/images/profile.jpg" alt="Duberney Obando Cano">
-            </div>
-            
-            <h1 class="hero-title">Duberney Obando Cano</h1>
-            
-            <!-- Modern typewriter subtitle -->
-            <p class="hero-subtitle text-lg text-gray-300 mt-2">
-                <span class="sr-only">Títulos: </span>
-                <span id="typewriter" class="font-medium text-indigo-200"></span>
-                <span id="typewriter-cursor" class="inline-block w-1 bg-indigo-400 ml-1 animate-blink" aria-hidden="true"></span>
-            </p>
-            
-            <div class="specialties">
-                <div class="specialty"><i class="fas fa-code"></i> Desarrollo Web</div>
-                <div class="specialty"><i class="fas fa-shield-alt"></i> Auditorías de Ciberseguridad</div>
-                <div class="specialty"><i class="fas fa-user-secret"></i> Red Team</div>
-            </div>
-            
-            <div class="cta-buttons">
-                <a href="#contact" class="cta-button primary">
-                    <i class="fas fa-envelope"></i> Contáctame
-                </a>
-                <a href="#projects" class="cta-button secondary">
-                    <i class="fas fa-briefcase"></i> Ver Proyectos
-                </a>
-            </div>
-            
-            <div class="cyber-badge">
-                <i class="fas fa-shield-alt"></i> Especialista en Seguridad Ofensiva
-            </div>
-        </div>
-        
-        <div class="scroll-indicator">
-            Desplázate para descubrir más
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
+    <!-- Indicador de Scroll Minimalista -->
+    <div class="scroll-indicator hidden md:flex">
+        <span class="font-mono text-[10px] tracking-[0.25em]">Descubrir</span>
+        <i class="fas fa-chevron-down animate-bounce text-[9px]"></i>
+    </div>
+</section>
 
-    <script>
-        // Modern typewriter that cycles through phrases with typing and deleting
-        document.addEventListener('DOMContentLoaded', function () {
-            const phrases = [
-                'Tecnólogo Análisis y Desarrollo de Software',
-                'Desarrollador de Software',
-                'Especialista en Ciberseguridad'
-            ];
+<script>
+    import { initTypewriter } from '../scripts/typewriter';
 
-            const typeEl = document.getElementById('typewriter');
-            const cursorEl = document.getElementById('typewriter-cursor');
+    document.addEventListener('DOMContentLoaded', () => {
+        // Inicialización de Typewriter
+        const phrases = [
+            'Tecnólogo en Análisis y Desarrollo de Software',
+            'Desarrollador de Software',
+            'Especialista en Ciberseguridad'
+        ];
 
-            if (!(typeEl instanceof HTMLElement)) return; // nothing to do if target missing
-            const type = typeEl;
-
-            // Tailwind-friendly cursor blink (fallback if animate-blink not present)
-            if (cursorEl) {
-                cursorEl.style.transition = 'opacity 0.1s linear';
-                setInterval(() => {
-                    cursorEl.style.opacity = cursorEl.style.opacity === '0' ? '1' : '0';
-                }, 600);
-            }
-
-            let phraseIndex = 0;
-            let charIndex = 0;
-            let typing = true; // true => typing, false => deleting
-
-            const TYPING_SPEED = 80; // ms per char
-            const DELETING_SPEED = 40;
-            const HOLD_DELAY = 1500; // how long to hold the full phrase
-
-            function tick() {
-                const current = phrases[phraseIndex];
-
-                if (typing) {
-                    charIndex++;
-                    type.textContent = current.slice(0, charIndex);
-
-                    if (charIndex === current.length) {
-                        typing = false;
-                        setTimeout(tick, HOLD_DELAY);
-                        return;
-                    }
-                    setTimeout(tick, TYPING_SPEED + Math.random() * 80);
-                } else {
-                    charIndex--;
-                    type.textContent = current.slice(0, charIndex);
-
-                    if (charIndex === 0) {
-                        typing = true;
-                        phraseIndex = (phraseIndex + 1) % phrases.length;
-                        setTimeout(tick, 200);
-                        return;
-                    }
-                    setTimeout(tick, DELETING_SPEED + Math.random() * 40);
-                }
-            }
-
-            // start after small delay
-            setTimeout(tick, 600);
+        initTypewriter('typewriter', 'typewriter-cursor', phrases, {
+            typingSpeed: 60,
+            deletingSpeed: 30,
+            holdDelay: 2000
         });
-    </script>
-</body>
-</html>
+    });
+</script>

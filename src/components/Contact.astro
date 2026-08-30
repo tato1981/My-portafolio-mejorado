@@ -1,213 +1,174 @@
+---
+// Contact.astro - MONOCROMO TOTAL (sin verde WhatsApp)
+---
 
-
-
-<section id="contact" class="py-20 relative overflow-hidden min-h-screen flex items-center">
-  <!-- Fondo idéntico al diseño anterior -->
-  <div class="hero-background absolute inset-0 z-0"></div>
-  <div class="grid-pattern z-0"></div>
-
-  <!-- Formas flotantes idénticas al diseño anterior -->
-  <div class="floating-shapes absolute inset-0 z-0">
-    <div class="floating-shape w-72 h-72 md:w-96 md:h-96 top-10 left-5 bg-blue-500/30 animation-delay-0"></div>
-    <div class="floating-shape w-48 h-48 md:w-64 md:h-64 top-60 right-5 bg-purple-500/30 animation-delay-5000 animation-duration-20s"></div>
-    <div class="floating-shape w-60 h-60 md:w-80 md:h-80 bottom-10 left-15 bg-cyan-500/30 animation-delay-10000 animation-duration-25s"></div>
-  </div>
-
+<section id="contact" class="py-12 md:py-16 relative">
   <div class="container mx-auto px-4 relative z-10">
-    <h2 class="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent bg-size-200 animate-textShine">
-      Hablemos
-    </h2>
+    <!-- Encabezado Editorial con Nº -->
+    <div class="section-header animate-[fadeInUp_0.6s_ease-out]">
+      <div class="section-header-inner">
+        <div class="section-header-title">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="section-number">06</span>
+            <hr class="section-divider" />
+          </div>
+          <h2>Hablemos</h2>
+          <p>¿Tienes un proyecto, una auditoría pendiente o una idea de software? Hablemos directamente.</p>
+        </div>
+      </div>
+    </div>
 
-    <p class="text-xl text-center text-gray-300 mb-16 max-w-2xl mx-auto">
-      ¿Tienes un proyecto en mente? Contáctame directamente a través de cualquiera de estos canales
-    </p>
-
-    <!-- Grid de métodos de contacto -->
+    <!-- Canales de Contacto Directos -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
       <!-- Email -->
       <a href="mailto:duberney22915@gmail.com"
-         class="contact-method-card cyber-border rounded-xl p-8 hover:transform hover:-translate-y-2 transition-all duration-300 group">
-        <div class="flex flex-col items-center text-center">
-          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-            <i class="fas fa-envelope text-3xl text-cyan-400"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-            Email
-          </h3>
-          <p class="text-gray-400 mb-3 text-sm">Respuesta en 24-48 horas</p>
-          <p class="text-cyan-400 font-medium break-all">duberney22915@gmail.com</p>
-          <div class="mt-4 flex items-center text-sm text-gray-400 group-hover:text-cyan-400 transition-colors">
-            <span>Enviar correo</span>
-            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-          </div>
+         class="cyber-card p-8 transition-all hover:-translate-y-1.5 flex flex-col items-center text-center group">
+        <div class="absolute top-2 right-3 font-mono text-[8px] text-[var(--text-subtle)] select-none">[CHANNEL: SECURE_MAIL]</div>
+        <div class="icon-box icon-box-lg mb-5 group-hover:bg-[var(--accent-color)] group-hover:text-black transition-all">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-[var(--text-color)]">
+          Email
+        </h3>
+        <p class="text-xs text-[var(--text-muted)] mb-3 font-mono">Respuesta habitual en 24 horas</p>
+        <p class="text-sm text-[var(--accent-color)] font-semibold break-all font-mono">duberney22915@gmail.com</p>
+
+        <div class="mt-5 flex items-center gap-1.5 text-xs font-bold text-[var(--text-muted)] group-hover:text-[var(--accent-color)] transition-colors font-mono">
+          <span>Enviar correo</span>
+          <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
         </div>
       </a>
 
-      <!-- WhatsApp -->
-      <a href="https://wa.me/573145716188?text=Hola,%20me%20gustaría%20hablar%20sobre%20un%20proyecto"
+      <!-- WhatsApp (Color WhatsApp Real) -->
+      <a href="https://wa.me/573145716188?text=Hola,%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto"
          target="_blank"
          rel="noopener noreferrer"
-         class="contact-method-card cyber-border rounded-xl p-8 hover:transform hover:-translate-y-2 transition-all duration-300 group">
-        <div class="flex flex-col items-center text-center">
-          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-            <i class="fab fa-whatsapp text-3xl text-green-400"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500">
-            WhatsApp
-          </h3>
-          <p class="text-gray-400 mb-3 text-sm">Respuesta inmediata</p>
-          <p class="text-green-400 font-medium">+57 314 571 6188</p>
-          <div class="mt-4 flex items-center text-sm text-gray-400 group-hover:text-green-400 transition-colors">
-            <span>Iniciar chat</span>
-            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-          </div>
+         class="cyber-card p-8 transition-all hover:-translate-y-1.5 flex flex-col items-center text-center group hover:border-[#25d366] hover:shadow-[0_0_15px_rgba(37,211,102,0.15)]">
+        <div class="absolute top-2 right-3 font-mono text-[8px] text-[var(--text-subtle)] select-none">[CHANNEL: DIRECT_IM]</div>
+        <div class="icon-box icon-box-lg mb-5 !bg-[rgba(37,211,102,0.08)] !text-[#25d366] group-hover:!bg-[#25d366] group-hover:!text-black transition-all">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-[var(--text-color)]">
+          WhatsApp
+        </h3>
+        <p class="text-xs text-[var(--text-muted)] mb-3 font-mono">Respuesta inmediata o en minutos</p>
+        <p class="text-sm text-[#25d366] font-semibold font-mono">+57 314 571 6188</p>
+
+        <div class="mt-5 flex items-center gap-1.5 text-xs font-bold text-[var(--text-muted)] group-hover:text-[#25d366] transition-colors font-mono">
+          <span>Iniciar conversación</span>
+          <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
         </div>
       </a>
 
-      <!-- LinkedIn -->
+      <!-- LinkedIn (Color LinkedIn Real) -->
       <a href="https://linkedin.com/in/tu-usuario"
          target="_blank"
          rel="noopener noreferrer"
-         class="contact-method-card cyber-border rounded-xl p-8 hover:transform hover:-translate-y-2 transition-all duration-300 group">
-        <div class="flex flex-col items-center text-center">
-          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/20 to-indigo-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-            <i class="fab fa-linkedin-in text-3xl text-blue-400"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
-            LinkedIn
-          </h3>
-          <p class="text-gray-400 mb-3 text-sm">Red profesional</p>
-          <p class="text-blue-400 font-medium">Conectemos</p>
-          <div class="mt-4 flex items-center text-sm text-gray-400 group-hover:text-blue-400 transition-colors">
-            <span>Ver perfil</span>
-            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-          </div>
+         class="cyber-card p-8 transition-all hover:-translate-y-1.5 flex flex-col items-center text-center group hover:border-[#0077b5] hover:shadow-[0_0_15px_rgba(0,119,181,0.15)]">
+        <div class="absolute top-2 right-3 font-mono text-[8px] text-[var(--text-subtle)] select-none">[CHANNEL: PROF_NET]</div>
+        <div class="icon-box icon-box-lg mb-5 !bg-[rgba(0,119,181,0.08)] !text-[#0077b5] group-hover:!bg-[#0077b5] group-hover:!text-black transition-all">
+          <i class="fab fa-linkedin-in"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-[var(--text-color)]">
+          LinkedIn
+        </h3>
+        <p class="text-xs text-[var(--text-muted)] mb-3 font-mono">Red profesional y laboral</p>
+        <p class="text-sm text-[#0077b5] font-semibold font-mono">Conectar en LinkedIn</p>
+
+        <div class="mt-5 flex items-center gap-1.5 text-xs font-bold text-[var(--text-muted)] group-hover:text-[#0077b5] transition-colors font-mono">
+          <span>Ver perfil profesional</span>
+          <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
         </div>
       </a>
     </div>
 
-    <!-- Información adicional -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-      <!-- Disponibilidad -->
-      <div class="contact-info-card cyber-border rounded-xl p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
-        <h3 class="text-xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-          <i class="fas fa-calendar-check mr-2"></i>Disponibilidad
+    <!-- Disponibilidad y Horarios -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
+      <!-- Disponibilidad Técnica -->
+      <div class="cyber-card p-6">
+        <div class="absolute top-2 right-3 font-mono text-[8px] text-[var(--text-subtle)] select-none">[STATUS: RESOURCE_AVAIL]</div>
+        <h3 class="text-lg font-bold mb-4 text-[var(--text-color)] flex items-center gap-2">
+          <i class="fas fa-calendar-check text-[var(--accent-color)]"></i>
+          Disponibilidad
         </h3>
-
-        <div class="space-y-3">
-          <div class="flex justify-between items-center">
-            <span class="text-gray-300">Proyectos Freelance</span>
-            <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 font-semibold text-sm">Disponible</span>
+        <div class="space-y-3.5 text-sm font-mono">
+          <div class="flex justify-between items-center py-1 border-b border-[var(--border-color)]/60">
+            <span class="text-[var(--text-muted)]">Proyectos Freelance</span>
+            <span class="px-2.5 py-0.5 rounded-md bg-[var(--accent-light)] text-[var(--accent-color)] font-bold text-xs border border-[var(--accent-border)]">Disponible</span>
           </div>
-          <div class="flex justify-between items-center">
-            <span class="text-gray-300">Tiempo de Respuesta</span>
-            <span class="text-cyan-400 font-semibold">24-48 horas</span>
+          <div class="flex justify-between items-center py-1 border-b border-[var(--border-color)]/60">
+            <span class="text-[var(--text-muted)]">Respuesta Inicial</span>
+            <span class="text-[var(--text-color)] font-semibold">Menos de 24 horas</span>
           </div>
-          <div class="flex justify-between items-center">
-            <span class="text-gray-300">Idiomas</span>
-            <span class="text-cyan-400 font-semibold">Español</span>
+          <div class="flex justify-between items-center py-1 border-b border-[var(--border-color)]/60">
+            <span class="text-[var(--text-muted)]">Ubicación</span>
+            <span class="text-[var(--text-color)] font-semibold">Colombia (UTC-5)</span>
           </div>
-          
-          <div class="flex justify-between items-center">
-            <span class="text-gray-300">Ubicación</span>
-            <span class="text-cyan-400 font-semibold">Colombia</span>
-          </div>
-        </div>
-
-        <div class="mt-4 pt-4 border-t border-gray-700">
-          <div class="flex items-center">
-            <div class="w-3 h-3 rounded-full bg-green-500 mr-2 animate-pulse"></div>
-            <span class="text-green-400 font-medium text-sm">Disponible para nuevos proyectos</span>
+          <div class="flex justify-between items-center py-1">
+            <span class="text-[var(--text-muted)]">Modalidad preferida</span>
+            <span class="text-[var(--text-color)] font-semibold">Remoto / Híbrido</span>
           </div>
         </div>
       </div>
 
-      <!-- Horario y preferencias -->
-      <div class="contact-info-card cyber-border rounded-xl p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
-        <h3 class="text-xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-          <i class="fas fa-clock mr-2"></i>Horario de Atención
+      <!-- Horarios -->
+      <div class="cyber-card p-6">
+        <div class="absolute top-2 right-3 font-mono text-[8px] text-[var(--text-subtle)] select-none">[STATUS: SCHEDULE]</div>
+        <h3 class="text-lg font-bold mb-4 text-[var(--text-color)] flex items-center gap-2">
+          <i class="fas fa-clock text-[var(--accent-color)]"></i>
+          Horario de Atención
         </h3>
-
-        <div class="space-y-3">
-          <div class="flex items-start">
-            <i class="fas fa-check-circle text-cyan-400 mr-3 mt-1"></i>
+        <div class="space-y-4 text-sm text-[var(--text-muted)] font-mono">
+          <div class="flex items-start gap-3">
+            <i class="fas fa-circle-check text-[var(--accent-color)] mt-0.5 text-xs"></i>
             <div>
-              <p class="text-gray-300 font-medium">Lunes a Viernes</p>
-              <p class="text-gray-400 text-sm">9:00 AM - 6:00 PM (GMT-5)</p>
+              <p class="text-[var(--text-color)] font-semibold">Lunes a Viernes</p>
+              <p class="text-xs text-[var(--text-subtle)]">09:00 AM - 06:00 PM (Hora Colombia)</p>
             </div>
           </div>
-          <div class="flex items-start">
-            <i class="fas fa-check-circle text-cyan-400 mr-3 mt-1"></i>
+          <div class="flex items-start gap-3">
+            <i class="fas fa-circle-check text-[var(--accent-color)] mt-0.5 text-xs"></i>
             <div>
-              <p class="text-gray-300 font-medium">Sábados</p>
-              <p class="text-gray-400 text-sm">10:00 AM - 2:00 PM (GMT-5)</p>
+              <p class="text-[var(--text-color)] font-semibold">Sábados</p>
+              <p class="text-xs text-[var(--text-subtle)]">10:00 AM - 02:00 PM (Hora Colombia)</p>
             </div>
           </div>
-          <div class="flex items-start">
-            <i class="fas fa-info-circle text-purple-400 mr-3 mt-1"></i>
+          <div class="flex items-start gap-3">
+            <i class="fas fa-circle-info text-[var(--accent-color)] mt-0.5 text-xs"></i>
             <div>
-              <p class="text-gray-300 font-medium">Proyectos urgentes</p>
-              <p class="text-gray-400 text-sm">Disponibilidad especial vía WhatsApp</p>
+              <p class="text-[var(--text-color)] font-semibold">Proyectos Críticos</p>
+              <p class="text-xs text-[var(--text-subtle)]">Monitoreo continuo según acuerdo de soporte.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Call to action final -->
-    <div class="mt-12 text-center">
-      <div class="max-w-2xl mx-auto bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 rounded-xl p-8 cyber-border">
-        <i class="fas fa-rocket text-4xl text-cyan-400 mb-4"></i>
-        <h3 class="text-2xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-          ¿Listo para comenzar tu proyecto?
-        </h3>
-        <p class="text-gray-300 mb-6">
-          No importa si es una idea pequeña o un proyecto grande, me encantaría escucharte y ayudarte a hacerlo realidad.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="mailto:duberney22915@gmail.com"
-             class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-cyan-500/50">
-            <i class="fas fa-envelope mr-2"></i>
-            Enviar Email
-          </a>
-          <a href="https://wa.me/573145716188?text=Hola,%20me%20gustaría%20hablar%20sobre%20un%20proyecto"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-medium rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all duration-300 shadow-lg hover:shadow-green-500/50">
-            <i class="fab fa-whatsapp mr-2"></i>
-            Chat en WhatsApp
-          </a>
-        </div>
+    <!-- CTA Final -->
+    <div class="max-w-2xl mx-auto cyber-card p-8 text-center">
+      <div class="absolute top-2 right-3 font-mono text-[8px] text-[var(--text-subtle)] select-none">[NOTICE: CONNECTION_INIT]</div>
+      <div class="icon-box mx-auto mb-4">
+        <i class="fas fa-rocket"></i>
+      </div>
+      <h3 class="text-2xl font-bold mb-3 text-[var(--text-color)]">
+        ¿Iniciamos tu próximo proyecto de software?
+      </h3>
+      <p class="text-sm text-[var(--text-muted)] mb-6 max-w-lg mx-auto leading-relaxed">
+        Cuéntame las metas de tu empresa, los requisitos tecnológicos o la infraestructura a auditar. Te responderé con una cotización preliminar.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="mailto:duberney22915@gmail.com" class="btn-primary w-full sm:w-auto justify-center">
+          <i class="fas fa-envelope"></i>
+          Enviar Correo
+        </a>
+        <a href="https://wa.me/573145716188?text=Hola,%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn-secondary w-full sm:w-auto justify-center hover:!border-[#25d366] hover:!text-[#25d366] hover:!bg-[#25d366]/10">
+          <i class="fab fa-whatsapp"></i>
+          Chat WhatsApp
+        </a>
       </div>
     </div>
   </div>
 </section>
-
-<script>
-// Animación de las tarjetas al hacer scroll
-document.addEventListener('DOMContentLoaded', function () {
-  const contactCards = document.querySelectorAll('.contact-method-card, .contact-info-card');
-  const observerOptions = {
-    threshold: 0.3,
-    rootMargin: '0px 0px -100px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && entry.target instanceof HTMLElement) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, observerOptions);
-
-  contactCards.forEach(card => {
-    if (card instanceof HTMLElement) {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(20px)';
-      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      observer.observe(card);
-    }
-  });
-});
-</script>

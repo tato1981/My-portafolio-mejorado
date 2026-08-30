@@ -7,17 +7,20 @@ const description = "Gracias por contactarme. Responderé pronto.";
 ---
 
 <Layout title={title} description={description}>
-  <div class="flex items-center justify-center min-h-[70vh]">
-    <div class="cyber-border rounded-xl p-8 text-center max-w-2xl w-full bg-gray-900/50 backdrop-blur-sm border border-gray-800">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-textShine">
-        ¡Gracias por contactarme!
+  <div class="flex items-center justify-center min-h-[70vh] px-4">
+    <div class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-xl p-8 text-center max-w-2xl w-full shadow-sm">
+      <div class="w-16 h-16 rounded-full bg-blue-600/10 dark:bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-blue-400 text-3xl mx-auto mb-6">
+        <i class="fas fa-circle-check"></i>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-[var(--text-color)] mb-4 tracking-tight">
+        ¡Gracias por escribirme!
       </h1>
-      <p class="text-xl text-gray-300 mb-8">
-        He recibido tu mensaje y me pondré en contacto contigo en las próximas 24–48 horas.
+      <p class="text-base md:text-lg text-[var(--text-muted)] mb-8 leading-relaxed">
+        He recibido tu mensaje con éxito. Me pondré en contacto contigo a la brevedad, usualmente en menos de 24 horas.
       </p>
       <a
         href="/"
-        class="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 px-6 rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-cyan-500/50 font-medium"
+        class="btn-primary"
       >
         ← Volver al inicio
       </a>

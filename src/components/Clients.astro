@@ -1,0 +1,83 @@
+---
+// Clients.astro - Nueva Sección de Clientes con Marquee Infinito
+const clients = [
+    "Hotel Melo",
+    "Sintrasecop-UNP",
+    "Variedades Arcoiris y más",
+    "Centro Salud Ocupacional"
+];
+
+// Multiplicamos la lista para asegurar que el scroll infinito sea fluido y cubra toda la pantalla
+const scrollingClients = [...clients, ...clients, ...clients, ...clients];
+---
+
+<section id="clients" class="py-12 md:py-16 relative bg-[var(--bg-secondary)] border-b border-[var(--border-color)] overflow-hidden">
+    <div class="container mx-auto px-4">
+        <!-- Encabezado Editorial con Nº -->
+        <div class="section-header animate-[fadeInUp_0.6s_ease-out]">
+            <div class="section-header-inner">
+                <div class="section-header-title">
+                    <div class="flex items-center gap-3 mb-1">
+                        <span class="section-number">04</span>
+                        <hr class="section-divider" />
+                    </div>
+                    <h2>Clientes</h2>
+                    <p>Empresas y organizaciones que confían en mis auditorías de seguridad y soluciones de software.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor del Marquee Infinito -->
+        <div class="relative w-full overflow-hidden py-6 mt-8 select-none">
+            <!-- Capas de degradado para desvanecer los bordes laterales del scroll -->
+            <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[var(--bg-secondary)] to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[var(--bg-secondary)] to-transparent z-10 pointer-events-none"></div>
+
+            <!-- Ticker Animado -->
+            <div class="flex marquee-container gap-6">
+                <!-- Primer set de clientes -->
+                <div class="flex shrink-0 justify-around min-w-full gap-6 animate-marquee">
+                    {scrollingClients.map((client) => (
+                        <div class="cyber-card inline-flex items-center gap-4 py-4 px-6 min-w-[260px] bg-[var(--card-bg)] hover:border-[var(--accent-color)] hover:shadow-[0_0_15px_rgba(0,240,255,0.1)] transition-all">
+                            <i class="fas fa-shield-halved text-[var(--accent-color)] text-lg animate-pulse"></i>
+                            <div class="flex flex-col items-start text-left">
+                                <span class="font-semibold text-sm text-[var(--text-color)]">{client}</span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <!-- Set duplicado idéntico para loop infinito continuo -->
+                <div class="flex shrink-0 justify-around min-w-full gap-6 animate-marquee" aria-hidden="true">
+                    {scrollingClients.map((client) => (
+                        <div class="cyber-card inline-flex items-center gap-4 py-4 px-6 min-w-[260px] bg-[var(--card-bg)] hover:border-[var(--accent-color)] hover:shadow-[0_0_15px_rgba(0,240,255,0.1)] transition-all">
+                            <i class="fas fa-shield-halved text-[var(--accent-color)] text-lg animate-pulse"></i>
+                            <div class="flex flex-col items-start text-left">
+                                <span class="font-semibold text-sm text-[var(--text-color)]">{client}</span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Estilos del Marquee */
+    .marquee-container:hover .animate-marquee {
+        animation-play-state: paused;
+    }
+
+    .animate-marquee {
+        animation: marquee 120s linear infinite;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>

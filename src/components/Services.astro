@@ -1,195 +1,155 @@
+---
+// Services.astro - Rediseñado editorial monocromo
+---
 
-    
-</head>
-<body class="bg-gray-900 text-white min-h-screen overflow-x-hidden">
-    <!-- Sección Servicios -->
-    <section id="services" class="py-20 relative overflow-hidden min-h-screen flex items-center">
-        <!-- Fondo idéntico al diseño de contacto -->
-        <div class="hero-background absolute inset-0 z-0"></div>
-        <div class="grid-pattern z-0"></div>
-        
-        <!-- Formas flotantes idénticas al diseño de contacto -->
-        <div class="floating-shapes absolute inset-0 z-0">
-            <div class="floating-shape w-72 h-72 md:w-96 md:h-96 top-10 left-5 bg-blue-500/30 animation-delay-0"></div>
-            <div class="floating-shape w-48 h-48 md:w-64 md:h-64 top-60 right-5 bg-purple-500/30 animation-delay-5000 animation-duration-20s"></div>
-            <div class="floating-shape w-60 h-60 md:w-80 md:h-80 bottom-10 left-15 bg-cyan-500/30 animation-delay-10000 animation-duration-25s"></div>
+<section id="services" class="py-12 md:py-16 relative bg-[var(--bg-secondary)]">
+    <div class="container mx-auto px-4">
+        <!-- Encabezado Editorial con Nº -->
+        <div class="section-header animate-[fadeInUp_0.6s_ease-out]">
+            <div class="section-header-inner">
+                <div class="section-header-title">
+                    <div class="flex items-center gap-3 mb-1">
+                        <span class="section-number">05</span>
+                        <hr class="section-divider" />
+                    </div>
+                    <h2>Servicios</h2>
+                    <p>Soluciones integrales de alto impacto para potenciar la tecnología y blindar la seguridad de tus sistemas.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="container mx-auto px-4 relative z-10">
-            <h2 class="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent bg-size-200 animate-textShine">
-                Servicios
-            </h2>
-            
-            <p class="text-xl text-center text-gray-300 mb-12 max-w-2xl mx-auto">
-                Ofrezco soluciones integrales en desarrollo de software y ciberseguridad para llevar tus proyectos al siguiente nivel.
-            </p>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Servicio 1: Desarrollo de Software -->
-                <div class="service-card cyber-border rounded-xl p-8 hover:transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="service-icon">
-                        <i class="fas fa-code text-2xl text-white"></i>
+        <!-- Cuadrícula de Servicios -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto mb-16">
+            <!-- Servicio 1 -->
+            <div class="cyber-card flex flex-col justify-between text-center">
+                <div class="absolute top-2 right-3 font-mono text-[9px] text-[var(--text-subtle)] select-none">[SVC: DEV_CORE]</div>
+                <div>
+                    <div class="icon-box icon-box-lg mx-auto mb-6">
+                        <i class="fas fa-code"></i>
                     </div>
-                    
-                    <h3 class="text-2xl font-bold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                    <h3 class="text-2xl font-bold mb-4 text-[var(--text-color)]">
                         Desarrollo de Software
                     </h3>
-                    
-                    <p class="text-gray-300 mb-6 text-center">
-                        Creación de aplicaciones web, móviles y APIs escalables utilizando tecnologías modernas.
+                    <p class="text-sm text-[var(--text-muted)] mb-6 leading-relaxed">
+                        Creación de aplicaciones web, móviles y APIs escalables diseñadas para ofrecer alto rendimiento y mantenibilidad.
                     </p>
-                    
-                    <div class="space-y-3 mb-6">
-                        <div class="service-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Aplicaciones web responsivas</span>
+                    <div class="space-y-3 mb-6 text-sm text-left">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-circle-check text-[var(--accent-color)] text-xs"></i>
+                            <span class="text-[var(--text-color)]">Aplicaciones web interactivas</span>
                         </div>
-                        <div class="service-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>APIs RESTful y GraphQL</span>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-circle-check text-[var(--accent-color)] text-xs"></i>
+                            <span class="text-[var(--text-color)]">APIs RESTful estructuradas</span>
                         </div>
-                        <div class="service-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Bases de datos optimizadas</span>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-circle-check text-[var(--accent-color)] text-xs"></i>
+                            <span class="text-[var(--text-color)]">Bases de datos relacionales y NoSQL</span>
                         </div>
-                        <div class="service-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Integración de terceros</span>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-circle-check text-[var(--accent-color)] text-xs"></i>
+                            <span class="text-[var(--text-color)]">Integración de pasarelas y servicios</span>
                         </div>
-                    </div>
-                    
-                    <div class="service-tech">
-                        <span class="tech-tag">Astro</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">TypeScript</span>
                     </div>
                 </div>
-                
-                <!-- Servicio 2: Auditorías de Ciberseguridad -->
-                <div class="service-card cyber-border rounded-xl p-8 hover:transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="service-icon">
-                        <i class="fas fa-shield-alt text-2xl text-white"></i>
-                    </div>
-                    
-                    <h3 class="text-2xl font-bold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                        Auditorías de Ciberseguridad
-                    </h3>
-                    
-                    <p class="text-gray-300 mb-6 text-center">
-                        Identificación de vulnerabilidades y recomendaciones para mitigar riesgos en sistemas y aplicaciones.
-                    </p>
-                    
-                    <div class="space-y-3 mb-6">
-                        <div class="service-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Análisis de vulnerabilidades</span>
-                        </div>
-                        <div class="service-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Pruebas de penetración</span>
-                        </div>
-                        <div class="service-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Revisión de código seguro</span>
-                        </div>
-                        <div class="service-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Plan de remediación</span>
-                        </div>
-                    </div>
-                    
-                    <div class="service-tech">
-                        <span class="tech-tag">OWASP</span>
-                        <span class="tech-tag">NIST</span>
-                        <span class="tech-tag">Metasploit</span>
-                        <span class="tech-tag">Burp Suite</span>
-                    </div>
-                </div>
-                
-                <!-- Servicio 3: Hacking Ético (Red Team) -->
-                <div class="service-card cyber-border rounded-xl p-8 hover:transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="service-icon">
-                        <i class="fas fa-user-secret text-2xl text-white"></i>
-                    </div>
-                    
-                    <h3 class="text-2xl font-bold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                        Hacking Ético (Red Team)
-                    </h3>
-                    
-                    <p class="text-gray-300 mb-6 text-center">
-                        Simulación de ataques controlados para fortalecer la seguridad de sistemas y redes.
-                    </p>
-                    
-                    <div class="space-y-3 mb-6">
-                        <div class="service-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Simulación de amenazas avanzadas</span>
-                        </div>
-                        <div class="service-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Pruebas de ingeniería social</span>
-                        </div>
-                        <div class="service-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Evaluación de respuesta a incidentes</span>
-                        </div>
-                        <div class="service-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Informes detallados de seguridad</span>
-                        </div>
-                    </div>
-                    
-                    <div class="service-tech">
-                        <span class="tech-tag">Kali Linux</span>
-                        <span class="tech-tag">Metasploit</span>
-                        <span class="tech-tag">Wireshark</span>
-                        <span class="tech-tag">Nmap</span>
-                    </div>
+                <div class="flex flex-wrap gap-1 pt-4 border-t border-[var(--border-color)] justify-center">
+                    <span class="tech-tag">React / Astro</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">PostgreSQL</span>
                 </div>
             </div>
-            
-            <!-- Mensaje adicional -->
-            <div class="mt-12 text-center max-w-3xl mx-auto">
-                <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50">
-                    <h3 class="text-xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                        ¿Necesitas una solución personalizada?
+
+            <!-- Servicio 2 -->
+            <div class="cyber-card flex flex-col justify-between text-center">
+                <div class="absolute top-2 right-3 font-mono text-[9px] text-[var(--text-subtle)] select-none">[SVC: AUDIT_SYS]</div>
+                <div>
+                    <div class="icon-box icon-box-lg mx-auto mb-6">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-[var(--text-color)]">
+                        Auditorías de Ciberseguridad
                     </h3>
-                    <p class="text-gray-300">
-                        Cada proyecto es único. Si no encuentras exactamente lo que buscas, contáctame y trabajaremos juntos para crear una solución a medida que se adapte a tus necesidades específicas.
+                    <p class="text-sm text-[var(--text-muted)] mb-6 leading-relaxed">
+                        Evaluación exhaustiva de tus sistemas para identificar fallos de seguridad y recomendar mitigaciones efectivas.
                     </p>
+                    <div class="space-y-3 mb-6 text-sm text-left">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-circle-check text-[var(--accent-color)] text-xs"></i>
+                            <span class="text-[var(--text-color)]">Análisis de vulnerabilidades web</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-circle-check text-[var(--accent-color)] text-xs"></i>
+                            <span class="text-[var(--text-color)]">Revisión de configuraciones cloud</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-circle-check text-[var(--accent-color)] text-xs"></i>
+                            <span class="text-[var(--text-color)]">Revisión de código (SAST / DAST)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-circle-check text-[var(--accent-color)] text-xs"></i>
+                            <span class="text-[var(--text-color)]">Plan de acción para cumplimiento</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-1 pt-4 border-t border-[var(--border-color)] justify-center">
+                    <span class="tech-tag">OWASP</span>
+                    <span class="tech-tag">NIST</span>
+                    <span class="tech-tag">Burp Suite</span>
+                    <span class="tech-tag">Static Audits</span>
+                </div>
+            </div>
+
+            <!-- Servicio 3 -->
+            <div class="cyber-card flex flex-col justify-between text-center">
+                <div class="absolute top-2 right-3 font-mono text-[9px] text-[var(--text-subtle)] select-none">[SVC: PENTEST]</div>
+                <div>
+                    <div class="icon-box icon-box-lg mx-auto mb-6">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-[var(--text-color)]">
+                        Hacking Ético
+                    </h3>
+                    <p class="text-sm text-[var(--text-muted)] mb-6 leading-relaxed">
+                        Simulación controlada de ataques dirigidos para evaluar la capacidad de respuesta y contención de tu empresa.
+                    </p>
+                    <div class="space-y-3 mb-6 text-sm text-left">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-circle-check text-[var(--accent-color)] text-xs"></i>
+                            <span class="text-[var(--text-color)]">Simulación de intrusiones de red</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-circle-check text-[var(--accent-color)] text-xs"></i>
+                            <span class="text-[var(--text-color)]">Pruebas de ingeniería social</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-circle-check text-[var(--accent-color)] text-xs"></i>
+                            <span class="text-[var(--text-color)]">Evaluación de defensa perimetral</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-circle-check text-[var(--accent-color)] text-xs"></i>
+                            <span class="text-[var(--text-color)]">Reporte técnico y ejecutivo PoC</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-1 pt-4 border-t border-[var(--border-color)] justify-center">
+                    <span class="tech-tag">Kali Linux</span>
+                    <span class="tech-tag">Metasploit</span>
+                    <span class="tech-tag">Nmap</span>
+                    <span class="tech-tag">Wireshark</span>
                 </div>
             </div>
         </div>
-    </section>
 
-   <script>
-    // Animación de las tarjetas al hacer scroll
-    document.addEventListener('DOMContentLoaded', function() {
-        const serviceCards = document.querySelectorAll('.service-card');
-        const observerOptions = {
-            threshold: 0.3,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && entry.target instanceof HTMLElement) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        serviceCards.forEach(card => {
-            if (card instanceof HTMLElement) {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(card);
-            }
-        });
-    });
-</script>
-</body>
-</html>
+        <!-- CTA a medida -->
+        <div class="max-w-3xl mx-auto cyber-card text-center">
+            <div class="absolute top-2 right-3 font-mono text-[9px] text-[var(--text-subtle)] select-none">[NOTICE: CUSTOM_REQUEST]</div>
+            <h3 class="text-xl font-bold mb-3 text-[var(--text-color)]">
+                ¿Buscas una solución a medida?
+            </h3>
+            <p class="text-sm text-[var(--text-muted)] leading-relaxed max-w-2xl mx-auto">
+                Cada empresa tiene necesidades de infraestructura y seguridad específicas. Si tu proyecto requiere una combinación personalizada de desarrollo avanzado e integración de ciberseguridad, contacta conmigo para trazar un plan técnico adaptado.
+            </p>
+        </div>
+    </div>
+</section>

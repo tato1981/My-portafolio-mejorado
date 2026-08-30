@@ -16,7 +16,7 @@ import Footer from '../components/Footer.astro';
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +29,7 @@ import Footer from '../components/Footer.astro';
   <link rel="apple-touch-icon" href="/images/favicon.ico" />
   
   <!-- Fuentes Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -42,7 +42,8 @@ import Footer from '../components/Footer.astro';
         theme: {
           extend: {
             fontFamily: {
-              poppins: ['Poppins', 'sans-serif'],
+              sans: ['Inter', 'sans-serif'],
+              mono: ['Share Tech Mono', 'monospace'],
             }
           }
         }
@@ -93,50 +94,103 @@ import Footer from '../components/Footer.astro';
   </script>
   
   <style is:global>
-    /* Estilos para el modo claro (por defecto) */
+    /* ===== TEMA MONOCROMÁTICO: AZUL Y AZUL NEÓN ===== */
+    /* Modo claro (por defecto) */
     :root {
-      --bg-color: linear-gradient(to bottom right, #1e1b4b, #581c87, #000);
-      --text-color: #ffffff;
-      --card-bg: #2d2a5a;
-      --header-bg: linear-gradient(to right, #4338ca, #7e22ce);
+      --bg-color: #f1f5f9;
+      --bg-secondary: #e2e8f0;
+      --text-color: #0f172a;
+      --text-muted: #475569;
+      --text-subtle: #64748b;
+      --card-bg: #ffffff;
+      --header-bg: rgba(241, 245, 249, 0.75);
+      --header-bg-scrolled: rgba(241, 245, 249, 0.95);
+      --border-color: #cbd5e1;
+      --border-color-strong: #94a3b8;
+      --tech-tag-bg: #e2e8f0;
+
+      /* Acento único: Azul Cobalto sólido para modo claro */
+      --accent-color: #2563eb;
+      --accent-color-hover: #1d4ed8;
+      --accent-color-strong: #1e40af;
+      --accent-light: rgba(37, 99, 235, 0.08);
+      --accent-light-strong: rgba(37, 99, 235, 0.18);
+      --accent-border: rgba(37, 99, 235, 0.3);
     }
-    
-    /* Estilos para el modo oscuro */
+
+    /* Modo oscuro */
     .dark {
-      --bg-color: #121212;
-      --text-color: #e5e5e5;
-      --card-bg: #1e1e1e;
-      --header-bg: #1e1e1e;
+      --bg-color: #040508;
+      --bg-secondary: #080b11;
+      --text-color: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+      --card-bg: #0b0e14;
+      --header-bg: rgba(4, 5, 8, 0.75);
+      --header-bg-scrolled: rgba(4, 5, 8, 0.95);
+      --border-color: #17202c;
+      --border-color-strong: #243242;
+      --tech-tag-bg: #101622;
+
+      /* Acento único: Azul Neón brillante (SIN GRADIENTES) */
+      --accent-color: #00f0ff;
+      --accent-color-hover: #00d8e6;
+      --accent-color-strong: #00a2b3;
+      --accent-light: rgba(0, 240, 255, 0.07);
+      --accent-light-strong: rgba(0, 240, 255, 0.15);
+      --accent-border: rgba(0, 240, 255, 0.25);
     }
-    
-    body {
-      background: var(--bg-color);
-      color: var(--text-color);
-      transition: background-color 0.3s ease, color 0.3s ease;
+
+    /* Scroll reveal animation classes */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Section number styling */
+    .section-number {
+      font-family: 'Inter', monospace;
+      font-weight: 300;
+      font-size: 0.875rem;
+      letter-spacing: 0.2em;
+      color: var(--accent-color);
+      opacity: 0.7;
     }
   </style>
 </head>
-<body class="font-poppins min-h-screen">
+<body class="min-h-screen relative antialiased">
 
-  <!-- Partículas de fondo globales -->
+  <!-- Partículas de fondo globales (sutiles y mono-color) -->
   <div class="particles fixed inset-0 z-0 pointer-events-none" id="particles-container"></div>
 
-  <!-- Header -->
-  <Header />
+  <!-- Cuadrícula de fondo minimalista en todo el Layout -->
+  <div class="grid-pattern fixed inset-0 z-0 pointer-events-none"></div>
 
-  <!-- Contenido principal -->
-  <main class="container mx-auto px-4 py-16">
-    <slot />
-  </main>
+  <!-- Contenido de la Aplicación -->
+  <div class="relative z-10 flex flex-col min-h-screen">
+    <!-- Header -->
+    <Header />
 
-  <!-- Footer -->
-  <Footer />
+    <!-- Contenido principal -->
+    <main class="container mx-auto px-4 py-8">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <Footer />
+  </div>
 
   <!-- Script global de partículas -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const particlesContainer = document.getElementById('particles-container');
-      const particleCount = 40;
+      const particleCount = 25; // Reducido para mayor elegancia
 
       if (particlesContainer) {
         for (let i = 0; i < particleCount; i++) {
@@ -147,22 +201,13 @@ import Footer from '../components/Footer.astro';
           const left = Math.random() * 100;
           const delay = Math.random() * 15;
           const duration = 15 + Math.random() * 10;
-          const size = 2 + Math.random() * 3;
+          const size = 2 + Math.random() * 2; // Partículas más pequeñas y sutiles
 
           particle.style.left = `${left}%`;
           particle.style.animationDelay = `${delay}s`;
           particle.style.animationDuration = `${duration}s`;
           particle.style.width = `${size}px`;
           particle.style.height = `${size}px`;
-
-          // Color aleatorio entre azules y morados
-          const colors = [
-            'rgba(59, 130, 246, 0.7)',
-            'rgba(139, 92, 246, 0.7)',
-            'rgba(6, 182, 212, 0.7)'
-          ];
-          const randomColor = colors[Math.floor(Math.random() * colors.length)];
-          particle.style.backgroundColor = randomColor;
 
           particlesContainer.appendChild(particle);
         }

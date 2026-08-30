@@ -1,122 +1,126 @@
+---
+// About.astro - Rediseñado editorial monocromo
+---
 
-<body class="bg-gray-900 text-white min-h-screen overflow-x-hidden">
-    <!-- Sección Sobre Mí -->
-    <section id="about" class="py-20 relative overflow-hidden min-h-screen flex items-center">
-        <!-- Fondo idéntico al diseño anterior -->
-        <div class="hero-background absolute inset-0 z-0"></div>
-        <div class="grid-pattern z-0"></div>
-        
-        <!-- Formas flotantes idénticas al diseño anterior -->
-        <div class="floating-shapes absolute inset-0 z-0">
-            <div class="floating-shape w-72 h-72 md:w-96 md:h-96 top-10 left-5 bg-blue-500/30 animation-delay-0"></div>
-            <div class="floating-shape w-48 h-48 md:w-64 md:h-64 top-60 right-5 bg-purple-500/30 animation-delay-5000 animation-duration-20s"></div>
-            <div class="floating-shape w-60 h-60 md:w-80 md:h-80 bottom-10 left-15 bg-cyan-500/30 animation-delay-10000 animation-duration-25s"></div>
-        </div>
-
-        <div class="container mx-auto px-4 relative z-10">
-            <h2 class="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent bg-size-200 animate-textShine">
-                Sobre Mí
-            </h2>
-            
-            <div class="max-w-4xl mx-auto">
-                <!-- Encabezado atractivo -->
-                <div class="text-center mb-12 animate-fadeInUp">
-                    <h3 class="text-2xl font-bold mb-4">Transformando ideas en soluciones digitales seguras y eficientes</h3>
-                    <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-6"></div>
-                    
-                </div>
-                
-                <!-- Contenido principal -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 animate-fadeInUp">
-                    <!-- Columna de texto -->
-                    <div class="space-y-6">
-                        <div class="cyber-border p-6 rounded-xl bg-gray-900/70 backdrop-blur-sm border border-gray-800/50">
-                            <h4 class="text-xl font-semibold mb-3 flex items-center">
-                                <i class="fas fa-user-secret text-cyan-400 mr-3"></i>
-                                Mi Pasión por la Tecnología
-                            </h4>
-                            <p class="text-gray-300">
-                                Desde mis primeros pasos en el mundo de la programación, he cultivado una profunda pasión por crear soluciones innovadoras que resuelvan problemas reales. Mi enfoque combina creatividad, precisión técnica y un compromiso inquebrantable con la seguridad.
-                            </p>
-                        </div>
-                        
-                        <div class="cyber-border p-6 rounded-xl bg-gray-900/70 backdrop-blur-sm border border-gray-800/50">
-                            <h4 class="text-xl font-semibold mb-3 flex items-center">
-                                <i class="fas fa-bullseye text-purple-400 mr-3"></i>
-                                Mi Enfoque
-                            </h4>
-                            <p class="text-gray-300">
-                                Creo en un enfoque proactivo donde la seguridad se integra desde las primeras etapas del desarrollo. Cada línea de código, cada componente de infraestructura, debe diseñarse con los más altos estándares de protección y eficiencia.
-                            </p>
-                        </div>
+<section id="about" class="py-12 md:py-16 relative">
+    <div class="container mx-auto px-4">
+        <!-- Encabezado Editorial con Nº -->
+        <div class="section-header animate-[fadeInUp_0.6s_ease-out]">
+            <div class="section-header-inner">
+                <div class="section-header-title">
+                    <div class="flex items-center gap-3 mb-1">
+                        <span class="section-number">01</span>
+                        <hr class="section-divider" />
                     </div>
-                    
-                    <!-- Columna de habilidades y logros -->
-                    <div class="space-y-6">
-                        <div class="cyber-border p-6 rounded-xl bg-gray-900/70 backdrop-blur-sm border border-gray-800/50">
-                            <h4 class="text-xl font-semibold mb-4 flex items-center">
-                                <i class="fas fa-tools text-blue-400 mr-3"></i>
-                                Especialidades Principales
-                            </h4>
-                            <div class="space-y-4">
-                                <div>
-                                    <div class="flex justify-between mb-1">
-                                        <span class="text-gray-300">Desarrollo Full Stack</span>
-                                        <span class="text-cyan-400 font-medium">95%</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress w-11/12"></div>
-                                    </div>
-                                </div>
-                                
-                                <div>
-                                    <div class="flex justify-between mb-1">
-                                        <span class="text-gray-300">Ciberseguridad Ofensiva</span>
-                                        <span class="text-cyan-400 font-medium">90%</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress w-10/12"></div>
-                                    </div>
-                                </div>
-                                
-                                <div>
-                                    <div class="flex justify-between mb-1">
-                                        <span class="text-gray-300">Arquitectura de Software</span>
-                                        <span class="text-cyan-400 font-medium">88%</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress w-9/12"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="cyber-border p-6 rounded-xl bg-gray-900/70 backdrop-blur-sm border border-gray-800/50">
-                            <h4 class="text-xl font-semibold mb-3 flex items-center">
-                                <i class="fas fa-medal text-yellow-400 mr-3"></i>
-                                Filosofía de Trabajo
-                            </h4>
-                            <p class="text-gray-300">
-                                "La excelencia no es un acto, sino un hábito". Me esfuerzo por superar expectativas en cada proyecto, priorizando la calidad, la seguridad y la satisfacción del cliente en cada etapa del desarrollo.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Llamada a la acción -->
-                <div class="text-center mt-12 animate-fadeInUp">
-                    <div class="inline-flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" class="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-semibold text-white hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25 flex items-center justify-center">
-                            <i class="fas fa-paper-plane mr-2"></i> Iniciar un Proyecto
-                        </a>
-                        <a href="#projects" class="px-6 py-3 border border-cyan-500/50 text-cyan-400 rounded-full font-semibold hover:bg-cyan-500/10 transition-all duration-300 flex items-center justify-center">
-                            <i class="fas fa-laptop-code mr-2"></i> Ver Portafolio
-                        </a>
-                    </div>
+                    <h2>Sobre Mí</h2>
+                    <p>Ingeniería, seguridad y optimización aplicadas al desarrollo de software profesional.</p>
                 </div>
             </div>
         </div>
-    </section>
 
-</body>
-</html>
+        <div class="max-w-6xl mx-auto">
+            <!-- Grid Bento de Información -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <!-- Bloque 1: Pasión y Enfoque -->
+                <div class="space-y-6">
+                    <div class="cyber-card">
+                        <div class="absolute top-2 right-3 font-mono text-[9px] text-[var(--text-subtle)] select-none">[MODULE: BIO_SYS]</div>
+                        <h3 class="text-xl font-bold mb-3 flex items-center gap-3 text-[var(--text-color)]">
+                            <span class="icon-box">
+                                <i class="fas fa-terminal"></i>
+                            </span>
+                            Mi Pasión por la Tecnología
+                        </h3>
+                        <p class="text-[var(--text-muted)] leading-relaxed text-[0.95rem]">
+                            Desde mis primeros pasos en el desarrollo de software, he cultivado una profunda pasión por crear soluciones robustas e innovadoras que resuelvan problemas de negocio reales. Mi enfoque diario combina el desarrollo ágil con altos estándares de ciberseguridad.
+                        </p>
+                    </div>
+
+                    <div class="cyber-card">
+                        <div class="absolute top-2 right-3 font-mono text-[9px] text-[var(--text-subtle)] select-none">[SEC_CLASS: LEVEL_1]</div>
+                        <h3 class="text-xl font-bold mb-3 flex items-center gap-3 text-[var(--text-color)]">
+                            <span class="icon-box">
+                                <i class="fas fa-shield-halved"></i>
+                            </span>
+                            Seguridad Desde el Diseño (SecByDesign)
+                        </h3>
+                        <p class="text-[var(--text-muted)] leading-relaxed text-[0.95rem]">
+                            Creo firmemente en la integración de la seguridad en cada fase del ciclo de vida del desarrollo de software (SDLC). No se trata de aplicar parches al final, sino de diseñar cada base de datos, componente de red y línea de código con resiliencia innata.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bloque 2: Métricas de Desempeño y Filosofía -->
+                <div class="space-y-6">
+                    <div class="cyber-card">
+                        <div class="absolute top-2 right-3 font-mono text-[9px] text-[var(--text-subtle)] select-none">[METRICS: CORE_DEV]</div>
+                        <h3 class="text-xl font-bold mb-6 flex items-center gap-3 text-[var(--text-color)]">
+                            <span class="icon-box">
+                                <i class="fas fa-chart-line"></i>
+                            </span>
+                            Especialidades Técnicas
+                        </h3>
+                        <div class="space-y-5">
+                            <div>
+                                <div class="flex justify-between mb-1.5 text-sm font-medium">
+                                    <span class="text-[var(--text-color)] font-mono">Desarrollo Full Stack</span>
+                                    <span class="text-[var(--accent-color)] font-bold font-mono">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-1.5 text-sm font-medium">
+                                    <span class="text-[var(--text-color)] font-mono">Ciberseguridad Ofensiva (Red Teaming)</span>
+                                    <span class="text-[var(--accent-color)] font-bold font-mono">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-1.5 text-sm font-medium">
+                                    <span class="text-[var(--text-color)] font-mono">DevSecOps / Infraestructura</span>
+                                    <span class="text-[var(--accent-color)] font-bold font-mono">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cyber-card">
+                        <div class="absolute top-2 right-3 font-mono text-[9px] text-[var(--text-subtle)] select-none">[STATUS: NOMINAL]</div>
+                        <h3 class="text-xl font-bold mb-3 flex items-center gap-3 text-[var(--text-color)]">
+                            <span class="icon-box">
+                                <i class="fas fa-medal"></i>
+                            </span>
+                            Filosofía de Trabajo
+                        </h3>
+                        <p class="text-[var(--text-muted)] leading-relaxed italic text-[0.95rem]">
+                            "La calidad y la seguridad no son negociables". Me esfuerzo por construir software eficiente y limpio, priorizando el valor a largo plazo, la estabilidad y la satisfacción del cliente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Llamada a la acción integrada -->
+            <div class="text-center mt-14">
+                <div class="inline-flex flex-col sm:flex-row gap-4 w-full justify-center">
+                    <a href="#contact" class="btn-primary w-full sm:w-auto justify-center">
+                        <i class="fas fa-paper-plane"></i>
+                        Iniciar un Proyecto
+                    </a>
+                    <a href="#projects" class="btn-secondary w-full sm:w-auto justify-center">
+                        <i class="fas fa-briefcase"></i>
+                        Ver Proyectos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
